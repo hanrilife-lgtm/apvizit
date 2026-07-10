@@ -6,10 +6,10 @@ document.addEventListener('DOMContentLoaded', function() {
     const TELEGRAM_CHAT_ID = CONFIG ? CONFIG.TELEGRAM_CHAT_ID : null;
     const VK_PROFILE_URL = CONFIG ? CONFIG.VK_PROFILE_URL : 'https://vk.com/idsanapolozkov';
 
-    if (TELEGRAM_TOKEN.includes('{{')) {
-        console.warn('⚠️');
+    if (TELEGRAM_TOKEN && TELEGRAM_CHAT_ID) {
+    console.log('✅ Telegram бот: активен');
     } else {
-        console.log('✅ Telegram бот: активен');
+    console.warn('⚠️ Telegram бот: не настроен');
     }
 
 

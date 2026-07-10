@@ -2,10 +2,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    const TELEGRAM_TOKEN = '{{TELEGRAM_TOKEN}}';
-    const TELEGRAM_CHAT_ID = '{{TELEGRAM_CHAT_ID}}';
-    const VK_PROFILE_URL = 'https://vk.com/idsanapolozkov';
-
+    const TELEGRAM_TOKEN = CONFIG ? CONFIG.TELEGRAM_TOKEN : null;
+    const TELEGRAM_CHAT_ID = CONFIG ? CONFIG.TELEGRAM_CHAT_ID : null;
+    const VK_PROFILE_URL = CONFIG ? CONFIG.VK_PROFILE_URL : 'https://vk.com/idsanapolozkov';
 
     if (TELEGRAM_TOKEN.includes('{{')) {
         console.warn('⚠️');

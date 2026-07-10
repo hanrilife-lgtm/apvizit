@@ -2,14 +2,16 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-    if (typeof CONFIG === 'undefined') {
-        console.warn('⚠️ CONFIG не загружен! Проверьте наличие config.js');
-        console.warn('📌 Для работы формы создайте config.js со своими данными');
-    }
+    const TELEGRAM_TOKEN = '{{TELEGRAM_TOKEN}}';
+    const TELEGRAM_CHAT_ID = '{{TELEGRAM_CHAT_ID}}';
+    const VK_PROFILE_URL = 'https://vk.com/idsanapolozkov';
 
-    const TELEGRAM_TOKEN = CONFIG ? CONFIG.TELEGRAM_TOKEN : null;
-    const TELEGRAM_CHAT_ID = CONFIG ? CONFIG.TELEGRAM_CHAT_ID : null;
-    const VK_PROFILE_URL = CONFIG ? CONFIG.VK_PROFILE_URL : 'https://vk.com/idsanapolozkov';
+
+    if (TELEGRAM_TOKEN.includes('{{')) {
+        console.warn('⚠️ Токены не подставлены! Используйте GitHub Actions или вставьте вручную.');
+    } else {
+        console.log('✅ Telegram бот: активен');
+    }
 
 
 
@@ -20,7 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroContent = document.querySelector('.hero-content');
     const heroVisual = document.querySelector('.hero-visual');
     const contactForm = document.getElementById('contactForm');
-
 
 
 
@@ -39,8 +40,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
-
-
 
 
     function updateActiveLink() {
@@ -73,8 +72,6 @@ document.addEventListener('DOMContentLoaded', function() {
     setTimeout(updateActiveLink, 100);
 
 
-
-
     const animatedElements = document.querySelectorAll(
         '.service-card, .case-card, .review-card, .about-content'
     );
@@ -102,7 +99,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
     if (heroSection && heroContent && heroVisual) {
         document.addEventListener('mousemove', function(e) {
             const x = (e.clientX / window.innerWidth - 0.5) * 8;
@@ -112,8 +108,6 @@ document.addEventListener('DOMContentLoaded', function() {
             heroVisual.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
         });
     }
-
-
 
 
     function updateHeader() {
@@ -133,7 +127,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateHeader);
     updateHeader();
-
 
 
     const stats = document.querySelectorAll('.stat-number');
@@ -189,7 +182,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
@@ -198,25 +190,19 @@ document.addEventListener('DOMContentLoaded', function() {
             const originalText = btn.innerHTML;
 
 
-            if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) {
-                btn.innerHTML = '⚠️ Настройте бота';
+            if (TELEGRAM_TOKEN.includes('{{')) {
+                btn.innerHTML = '⚠️ Бот не настроен';
                 btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
-                btn.style.opacity = '1';
+                btn.disabled = false;
+
+
                 setTimeout(() => {
+                    window.open(VK_PROFILE_URL, '_blank');
                     btn.innerHTML = originalText;
                     btn.style.background = '';
-                }, 4000);
-
-
-                if (confirm('📌 Бот не настроен. Написать в ВКонтакте?')) {
-                    window.open(VK_PROFILE_URL, '_blank');
-                }
+                }, 1500);
                 return;
             }
-
-            btn.disabled = true;
-            btn.innerHTML = '⏳ Отправка...';
-            btn.style.opacity = '0.7';
 
 
             const name = this.querySelector('input[placeholder="Имя"]').value.trim();
@@ -234,11 +220,13 @@ document.addEventListener('DOMContentLoaded', function() {
 🕐 ${new Date().toLocaleString('ru-RU')}
 🌐 Отправлено с APVIZIT`;
 
+            btn.disabled = true;
+            btn.innerHTML = '⏳ Отправка...';
+            btn.style.opacity = '0.7';
+
             fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     chat_id: TELEGRAM_CHAT_ID,
                     text: text,
@@ -276,14 +264,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     btn.style.background = '';
                 }, 4000);
 
-                if (confirm('❌ Не удалось отправить через бота. Написать в ВКонтакте?')) {
+                if (confirm('❌ Не удалось отправить. Написать в ВКонтакте?')) {
                     window.open(VK_PROFILE_URL, '_blank');
                 }
             });
         });
     }
-
-
 
     const topBtn = document.createElement('button');
     topBtn.innerHTML = '↑';
@@ -332,9 +318,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-
-
     const progressBar = document.createElement('div');
     progressBar.style.cssText = `
         position: fixed;
@@ -357,14 +340,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
 
-
     console.log('🚀 APVIZIT — сайт загружен!');
-    if (TELEGRAM_TOKEN && TELEGRAM_CHAT_ID) {
-        console.log('📩 Telegram бот: активен ✅');
-    } else {
-        console.warn('⚠️ Telegram бот: не настроен');
-        console.log('📌 Для настройки создайте config.js');
-    }
-    console.log(`🔗 VK: ${VK_PROFILE_URL}`);
 
 });

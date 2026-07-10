@@ -123,6 +123,8 @@ header {
     opacity: 1;
 }
 
+/* ═══ HERO-СЕКЦИЯ ═══ */
+
 .hero-section {
     position: relative;
     display: flex;
@@ -388,6 +390,8 @@ header {
     100% { opacity: 1; transform: translateY(0); }
 }
 
+/* ═══ СЕКЦИЯ УСЛУГ ═══ */
+
 .services-section {
     padding: 80px 5% 60px;
     background: linear-gradient(180deg, #0b081b 0%, #14102b 100%);
@@ -433,6 +437,46 @@ header {
     color: #b0b8d9;
     max-width: 500px;
     margin: 0 auto;
+}
+
+.prise {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    margin-bottom: 16px;
+}
+
+.price-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+}
+
+.price-old {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.2rem;
+    color: #989fc9;
+    text-decoration: line-through;
+}
+
+.price-new {
+    font-family: 'Archivo Black', sans-serif;
+    font-size: 2rem;
+    color: #2ed573;
+    font-weight: 700;
+}
+
+.price-badge {
+    background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+    color: #fff;
+    padding: 2px 12px;
+    border-radius: 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
 }
 
 .services-grid {
@@ -567,6 +611,8 @@ header {
     gap: 12px;
     color: #a78bfa;
 }
+
+/* ═══ СЕКЦИЯ КЕЙСОВ ═══ */
 
 .cases-section {
     padding: 80px 5% 60px;
@@ -756,6 +802,8 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
+/* ═══ СЕКЦИЯ ОБО МНЕ ═══ */
+
 .about-section {
     padding: 80px 5% 60px;
     background: linear-gradient(180deg, #0b081b 0%, #14102b 100%);
@@ -868,6 +916,8 @@ header {
     border-color: rgba(82, 58, 237, 0.2);
     color: #a78bfa;
 }
+
+/* ═══ СЕКЦИЯ ОТЗЫВЫ ═══ */
 
 .reviews-section {
     padding: 80px 5% 60px;
@@ -1066,6 +1116,8 @@ header {
 .review-btn i {
     font-size: 1.1rem;
 }
+
+/* ═══ СЕКЦИЯ КОНТАКТЫ ═══ */
 
 .contacts-section {
     padding: 80px 5% 60px;
@@ -1331,6 +1383,8 @@ header {
     margin-top: 8px;
 }
 
+/* ─── УВЕДОМЛЕНИЕ О VPN ─── */
+
 .form-notice {
     display: flex;
     align-items: center;
@@ -1514,6 +1568,8 @@ header {
     color: #a78bfa;
     border-bottom-color: rgba(124, 58, 237, 0.2);
 }
+
+/* ═══ ФУТЕР ═══ */
 
 .footer {
     background: linear-gradient(180deg, #0b081b 0%, #060411 100%);
@@ -1710,6 +1766,8 @@ header {
 .footer-bottom-links a:hover {
     color: #a78bfa;
 }
+
+/* ─── АДАПТИВ ─── */
 
 @media (max-width: 1024px) {
     .hero-section {

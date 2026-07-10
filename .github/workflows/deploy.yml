@@ -3,7 +3,7 @@ name: Deploy to GitHub Pages
 on:
   push:
     branches:
-      - main 
+      - main
 
 permissions:
   contents: read
@@ -24,7 +24,7 @@ jobs:
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Replace tokens
+      - name: Replace tokens in script.js
         run: |
           if [ -f script.js ]; then
             sed -i "s|{{TELEGRAM_TOKEN}}|${{ secrets.TELEGRAM_TOKEN }}|g" script.js

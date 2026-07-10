@@ -123,8 +123,6 @@ header {
     opacity: 1;
 }
 
-/* ═══ HERO-СЕКЦИЯ ═══ */
-
 .hero-section {
     position: relative;
     display: flex;
@@ -390,8 +388,6 @@ header {
     100% { opacity: 1; transform: translateY(0); }
 }
 
-/* ═══ СЕКЦИЯ УСЛУГ ═══ */
-
 .services-section {
     padding: 80px 5% 60px;
     background: linear-gradient(180deg, #0b081b 0%, #14102b 100%);
@@ -571,8 +567,6 @@ header {
     gap: 12px;
     color: #a78bfa;
 }
-
-/* ═══ СЕКЦИЯ КЕЙСОВ ═══ */
 
 .cases-section {
     padding: 80px 5% 60px;
@@ -762,8 +756,6 @@ header {
     border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ═══ СЕКЦИЯ ОБО МНЕ ═══ */
-
 .about-section {
     padding: 80px 5% 60px;
     background: linear-gradient(180deg, #0b081b 0%, #14102b 100%);
@@ -876,8 +868,6 @@ header {
     border-color: rgba(82, 58, 237, 0.2);
     color: #a78bfa;
 }
-
-/* ═══ СЕКЦИЯ ОТЗЫВЫ ═══ */
 
 .reviews-section {
     padding: 80px 5% 60px;
@@ -1076,8 +1066,6 @@ header {
 .review-btn i {
     font-size: 1.1rem;
 }
-
-/* ═══ СЕКЦИЯ КОНТАКТЫ ═══ */
 
 .contacts-section {
     padding: 80px 5% 60px;
@@ -1343,8 +1331,6 @@ header {
     margin-top: 8px;
 }
 
-/* ─── УВЕДОМЛЕНИЕ О VPN ─── */
-
 .form-notice {
     display: flex;
     align-items: center;
@@ -1528,8 +1514,6 @@ header {
     color: #a78bfa;
     border-bottom-color: rgba(124, 58, 237, 0.2);
 }
-
-/* ═══ ФУТЕР ═══ */
 
 .footer {
     background: linear-gradient(180deg, #0b081b 0%, #060411 100%);
@@ -1726,8 +1710,6 @@ header {
 .footer-bottom-links a:hover {
     color: #a78bfa;
 }
-
-/* ─── АДАПТИВ ─── */
 
 @media (max-width: 1024px) {
     .hero-section {

@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     if (TELEGRAM_TOKEN.includes('{{')) {
-        console.warn('⚠️ Токены не подставлены! Используйте GitHub Actions или вставьте вручную.');
+        console.warn('⚠️');
     } else {
         console.log('✅ Telegram бот: активен');
     }

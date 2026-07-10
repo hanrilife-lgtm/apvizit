@@ -1,4 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
+
+
+
     if (typeof CONFIG === 'undefined') {
         console.warn('⚠️ CONFIG не загружен! Проверьте наличие config.js');
         console.warn('📌 Для работы формы создайте config.js со своими данными');
@@ -8,6 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const TELEGRAM_CHAT_ID = CONFIG ? CONFIG.TELEGRAM_CHAT_ID : null;
     const VK_PROFILE_URL = CONFIG ? CONFIG.VK_PROFILE_URL : 'https://vk.com/idsanapolozkov';
 
+
+
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
     const header = document.querySelector('header');
@@ -15,6 +20,9 @@ document.addEventListener('DOMContentLoaded', function() {
     const heroContent = document.querySelector('.hero-content');
     const heroVisual = document.querySelector('.hero-visual');
     const contactForm = document.getElementById('contactForm');
+
+
+
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -31,6 +39,9 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+
+
 
     function updateActiveLink() {
         const headerHeight = header.offsetHeight;
@@ -61,6 +72,9 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener('scroll', updateActiveLink);
     setTimeout(updateActiveLink, 100);
 
+
+
+
     const animatedElements = document.querySelectorAll(
         '.service-card, .case-card, .review-card, .about-content'
     );
@@ -86,6 +100,9 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
+
+
+
     if (heroSection && heroContent && heroVisual) {
         document.addEventListener('mousemove', function(e) {
             const x = (e.clientX / window.innerWidth - 0.5) * 8;
@@ -95,6 +112,9 @@ document.addEventListener('DOMContentLoaded', function() {
             heroVisual.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
         });
     }
+
+
+
 
     function updateHeader() {
         const scrollY = window.scrollY;
@@ -113,6 +133,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     window.addEventListener('scroll', updateHeader);
     updateHeader();
+
+
 
     const stats = document.querySelectorAll('.stat-number');
 
@@ -165,12 +187,17 @@ document.addEventListener('DOMContentLoaded', function() {
         requestAnimationFrame(update);
     }
 
+
+
+
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
 
             const btn = this.querySelector('.submit-btn');
             const originalText = btn.innerHTML;
+
+
             if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) {
                 btn.innerHTML = '⚠️ Настройте бота';
                 btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
@@ -179,6 +206,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     btn.innerHTML = originalText;
                     btn.style.background = '';
                 }, 4000);
+
+
                 if (confirm('📌 Бот не настроен. Написать в ВКонтакте?')) {
                     window.open(VK_PROFILE_URL, '_blank');
                 }
@@ -188,6 +217,8 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.disabled = true;
             btn.innerHTML = '⏳ Отправка...';
             btn.style.opacity = '0.7';
+
+
             const name = this.querySelector('input[placeholder="Имя"]').value.trim();
             const phone = this.querySelector('input[placeholder="Телефон"]').value.trim();
             const contact = this.querySelector('input[placeholder*="связаться"]').value.trim() || 'Не указан';
@@ -252,6 +283,8 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+
+
     const topBtn = document.createElement('button');
     topBtn.innerHTML = '↑';
     topBtn.style.cssText = `
@@ -299,6 +332,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+
+
+
     const progressBar = document.createElement('div');
     progressBar.style.cssText = `
         position: fixed;
@@ -319,6 +355,8 @@ document.addEventListener('DOMContentLoaded', function() {
         const scrollPercent = (scrollTop / docHeight) * 100;
         progressBar.style.width = scrollPercent + '%';
     });
+
+
 
     console.log('🚀 APVIZIT — сайт загружен!');
     if (TELEGRAM_TOKEN && TELEGRAM_CHAT_ID) {

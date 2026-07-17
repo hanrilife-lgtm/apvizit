@@ -461,12 +461,14 @@ header {
     text-decoration: line-through;
 }
 
+/*
 .price-new {
     font-family: 'Archivo Black', sans-serif;
     font-size: 2rem;
     color: #2ed573;
     font-weight: 700;
 }
+ */
 
 .price-badge {
     background: linear-gradient(135deg, #ff6b6b, #ee5a24);

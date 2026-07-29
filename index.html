@@ -3,362 +3,423 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+    <title>APVIZIT — Веб-разработка 2026 | Создание сайтов под ключ</title>
+    <meta name="description" content="Веб-разработчик Александр. Современные сайты, интернет-магазины, корпоративные порталы. Работаю официально, быстро и с гарантией.">
     <link rel="icon" type="image/png" href="logo.png">
-    <title><title>Веб-разработчик | Создание сайтов под ключ | APVIZIT</title></title>
-    <meta name="description" content="Веб-разработчик Александр. Создаю сайты-визитки, корпоративные сайты и интернет-магазины под ключ. Адаптивная вёрстка, чистый код, быстрый запуск. Свяжитесь со мной!">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css" />
     <link rel="icon" href="logoappp.png" type="image/x-icon">
 </head>
 <body>
 
+    <!-- ПРЕЛОАДЕР -->
+    <div class="preloader">
+        <div class="preloader-ring"></div>
+        <div class="preloader-text">ЗАГРУЗКА...</div>
+    </div>
+
+    <!-- ХЕДЕР -->
     <header>
-        <div class="logo-block">
+        <a href="#heros" class="logo-block">
             <img src="logoappp.png" alt="APVIZIT Logo" class="logo-img">
             <span class="logo-text">APVIZIT</span>
-        </div>
+        </a>
 
-        <nav class="nav-links">
-            <a href="#heros" class="nav-link active">Главная</a>
-            <a href="#services" class="nav-link">Услуги</a>
-            <a href="#cases" class="nav-link">Кейсы</a>
-            <a href="#about" class="nav-link">Обо мне</a>
-            <a href="#reviews" class="nav-link">Отзывы</a>
-            <a href="#contacts" class="nav-link">Контакты</a>
-        </nav>
+        <ul class="nav-links">
+            <li><a href="#heros" class="nav-link active">Главная</a></li>
+            <li><a href="#services" class="nav-link">Услуги</a></li>
+            <li><a href="#cases" class="nav-link">Проекты</a></li>
+            <li><a href="#about" class="nav-link">Обо мне</a></li>
+            <li><a href="#reviews" class="nav-link">Отзывы</a></li>
+            <li><a href="#contacts" class="nav-link">Контакты</a></li>
+        </ul>
 
         <a href="#contacts" class="btn-cons">Получить консультацию ⭢</a>
     </header>
 
-    <main>
-        <section id="heros" class="hero-section">
-            <div class="hero-content">
-                <span class="glass-badge">
-                    <i class='bx bx-code-alt'></i> Веб-разработчик · Фрилансер
+    <!-- HERO -->
+    <section id="heros" class="hero-section">
+        <div class="bg-glow"></div>
+        <canvas id="particles"></canvas>
+
+        <div class="hero-content">
+            <span class="glass-badge">
+                <i class='bx bx-code-alt'></i> Веб-разработка · 2026
+            </span>
+
+            <h1 class="hero-title">
+                Превращаю идеи <br>в <span class="gradient-text">прибыльные сайты</span>
+            </h1>
+
+            <p class="hero-sub">
+                Создаю современные сайты, которые приносят заявки и продажи.<br>
+                Работаю официально, быстро и с гарантией результата.
+            </p>
+
+            <div class="btn-group">
+                <a href="#contacts" class="btn-primary">
+                    Заказать сайт <i class='bx bx-chevron-right'></i>
+                </a>
+                <a href="#cases" class="btn-secondary">
+                    Мои проекты <i class='bx bx-arrow-right'></i>
+                </a>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <i class='bx bx-rocket'></i>
+                    <span class="stat-number">6 мес</span>
+                    <span class="stat-label">стаж работы</span>
+                </div>
+                <div class="stat-item">
+                    <i class='bx bx-group'></i>
+                    <span class="stat-number">1</span>
+                    <span class="stat-label">выполненных проекта</span>
+                </div>
+                <div class="stat-item">
+                    <i class='bx bx-time'></i>
+                    <span class="stat-number">10 мин</span>
+                    <span class="stat-label">среднее время ответа</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="hero-visual">
+            <div class="hero-image-wrapper">
+                <div class="hero-image-placeholder"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БЕГУЩАЯ СТРОКА -->
+    <div class="marquee">
+        <div class="marquee-track">
+            <span>🚀 Современные сайты 2026</span>
+            <span>⚡ Адаптивная вёрстка</span>
+            <span>🔒 Безопасность и SEO</span>
+            <span>💎 Индивидуальный дизайн</span>
+            <span>📱 Мобильная оптимизация</span>
+            <span class="highlight">🔥 Гарантия возврата</span>
+            <span>🚀 Современные сайты 2026</span>
+            <span>⚡ Адаптивная вёрстка</span>
+            <span>🔒 Безопасность и SEO</span>
+            <span>💎 Индивидуальный дизайн</span>
+            <span>📱 Мобильная оптимизация</span>
+            <span class="highlight">🔥 Гарантия возврата</span>
+        </div>
+    </div>
+
+    <!-- УСЛУГИ (ПАКЕТЫ) -->
+    <section id="services" class="services-section">
+        <div class="services-header">
+            <span class="section-badge">
+                <i class='bx bx-grid-alt'></i> ПАКЕТЫ
+            </span>
+            <h2 class="section-title">Выбери свой <br>идеальный вариант</h2>
+            <p class="section-subtitle">Все пакеты включают адаптив, чистый код и 3 месяца поддержки.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class='bx bx-code'></i>
+                </div>
+                <h3>Старт</h3>
+                <p>Сайт-визитка для быстрого старта бизнеса. <strong>Запуск за 3 дня.</strong></p>
+                <ul class="service-features">
+                    <li><i class='bx bx-check-circle'></i> 1 страница</li>
+                    <li><i class='bx bx-check-circle'></i> Форма связи</li>
+                    <li><i class='bx bx-check-circle'></i> Базовое SEO</li>
+                </ul>
+                <div class="price-wrapper">
+                    <span class="prise">10 000 ₽</span>
+                </div>
+                <a href="#contacts" class="service-link order-btn" data-service="Старт">Заказать →</a>
+            </div>
+
+            <div class="service-card popular">
+                <div class="card-badge">🔥 Хит</div>
+                <div class="card-icon">
+                    <i class='bx bx-laptop'></i>
+                </div>
+                <h3>Бизнес</h3>
+                <p>Корпоративный сайт с админ-панелью. <strong>Рост продаж с первого месяца.</strong></p>
+                <ul class="service-features">
+                    <li><i class='bx bx-check-circle'></i> До 5 страниц</li>
+                    <li><i class='bx bx-check-circle'></i> Админ-панель</li>
+                    <li><i class='bx bx-check-circle'></i> Каталог услуг</li>
+                    <li><i class='bx bx-check-circle'></i> 3 месяца поддержки</li>
+                </ul>
+                <div class="price-wrapper">
+                    <span class="prise">25 000 ₽</span>
+                </div>
+                <a href="#contacts" class="service-link order-btn" data-service="Бизнес">Заказать →</a>
+            </div>
+
+            <div class="service-card">
+                <div class="card-icon">
+                    <i class='bx bx-store'></i>
+                </div>
+                <h3>VIP</h3>
+                <p>Интернет-магазин с полным функционалом. <strong>Масштабируйте бизнес.</strong></p>
+                <ul class="service-features">
+                    <li><i class='bx bx-check-circle'></i> Каталог с фильтрами</li>
+                    <li><i class='bx bx-check-circle'></i> Корзина и оплата</li>
+                    <li><i class='bx bx-check-circle'></i> Личный кабинет</li>
+                    <li><i class='bx bx-check-circle'></i> 6 месяцев поддержки</li>
+                </ul>
+                <div class="price-wrapper">
+                    <span class="prise">45 000 ₽</span>
+                </div>
+                <a href="#contacts" class="service-link order-btn" data-service="VIP">Заказать →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- КЕЙСЫ (РЕАЛЬНЫЕ ПРОЕКТЫ) -->
+    <section id="cases" class="cases-section">
+        <div class="cases-header">
+            <span class="section-badge">
+                <i class='bx bx-folder-open'></i> РЕАЛЬНЫЕ ПРОЕКТЫ
+            </span>
+            <h2 class="section-title">Мои работы</h2>
+            <p class="section-subtitle">Каждый проект — это шаг вперёд. Сейчас я активно пополняю портфолио.</p>
+        </div>
+
+        <div class="cases-grid">
+            <!-- КАРТОЧКА 1: SYMMETRY -->
+            <div class="case-card">
+                <div class="case-image">
+                    <img src="1.jpg" alt="Сайт парикмахерской SYMMETRY" style="width:100%; height:100%; object-fit:cover; display:block;">
+                </div>
+                <div class="case-content">
+                    <span class="case-status" style="background: rgba(196, 138, 123, 0.15); color: #C48A7B;">✂️ Сайт парикмахерской</span>
+                    <h3>SYMMETRY — студия красоты</h3>
+                    <p>Разработал современный лендинг с каталогом услуг, карточками мастеров, отзывами и интеграцией с Яндекс Картами для записи.</p>
+                    <div class="offer-benefits">
+                        <span>✨ Адаптивный дизайн</span>
+                        <span>📱 Мобильная вёрстка</span>
+                        <span>🔗 Интеграция с картами</span>
+                    </div>
+                    <!-- Добавленный блок с результатом -->
+                    <div class="case-result" style="margin: 12px 0 16px; background: rgba(46,213,115,0.08); border-radius: 12px; padding: 10px 16px; border-left: 3px solid #2ed573;">
+                        <span style="font-size:0.85rem; color: #b0b8d9;">📈 <strong style="color: #2ed573;">Результат:</strong> сайт помогает привлекать клиентов и увеличивать запись на услуги</span>
+                    </div>
+                    <a href="https://hanrilife-lgtm.github.io/1/" target="_blank" class="case-link primary">
+                        Посмотреть сайт <i class='bx bx-arrow-right'></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- КАРТОЧКА 2: ПРИГЛАШЕНИЕ -->
+            <div class="case-card invite-card">
+                <div class="case-image placeholder">
+                    <i class='bx bx-rocket'></i>
+                </div>
+                <div class="case-content">
+                    <span class="case-status">💼 Хотите быть первым?</span>
+                    <h3>Ваш проект может стать моим главным кейсом</h3>
+                    <p>Я ищу интересные задачи для портфолио. Оставьте заявку — и мы создадим крутой сайт вместе!</p>
+                    <div class="offer-benefits">
+                        <span>✨ Индивидуальный подход</span>
+                        <span>⚡ Быстрый старт</span>
+                        <span>🎯 Результат</span>
+                    </div>
+                    <a href="#contacts" class="case-link primary">Обсудить проект →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ОБО МНЕ -->
+    <section id="about" class="about-section">
+        <div class="about-container">
+            <div class="about-content">
+                <span class="section-badge">
+                    <i class='bx bx-user'></i> ОБО МНЕ
                 </span>
-
-                <h1 class="hero-title">
-                    РЕШАЮ ЗАДАЧИ.<br>
-                    <span class="gradient-text">ДЕЛАЮ РЕЗУЛЬТАТ.</span>
-                </h1>
-
-                <p class="hero-sub">
-                    Создаю современные сайты под ключ. <br>
-                    Работаю быстро, официально и с гарантией.
+                <h2 class="section-title">Привет! Я Александр</h2>
+                <p class="about-text">
+                    Веб-разработчик, который любит <span class="highlight">порядок в коде</span> и 
+                    <span class="highlight">чистоту в дизайне</span>. 
+                    Моя цель — создавать сайты, которые <span class="highlight">приносят пользу</span> бизнесу.
                 </p>
-
-                <div class="btn-group">
-                    <a href="#contacts" class="btn-primary">
-                        Связаться со мной <i class='bx bx-chevron-right'></i>
-                    </a>
-                    <a href="#cases" class="btn-secondary">
-                        Мои работы <i class='bx bx-arrow-right'></i>
-                    </a>
+                <p class="about-text">
+                    Работаю на фрилансе, потому что ценю гибкость, прямой контакт с заказчиком 
+                    и свободу выбирать задачи под свой стиль.
+                </p>
+                <p class="about-text">
+                    Мне важно, чтобы сайт не просто красиво выглядел, а был 
+                    <span class="highlight">удобным, быстрым и понятным</span> любому пользователю.
+                </p>
+                <div class="about-principle">
+                    <span>🧠</span>
+                    <p>«Сделано — значит работает без вопросов»</p>
                 </div>
-
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <i class='bx bx-rocket'></i>
-                        <span class="stat-number">6 мес</span>
-                        <span class="stat-label">стаж работы</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class='bx bx-group'></i>
-                        <span class="stat-number">1</span>
-                        <span class="stat-label">выполненных проекта</span>
-                    </div>
-                    <div class="stat-item">
-                        <i class='bx bx-time'></i>
-                        <span class="stat-number">10 мин</span>
-                        <span class="stat-label">среднее время ответа</span>
-                    </div>
+                <div class="about-skills">
+                    <span>HTML5</span>
+                    <span>CSS3</span>
+                    <span>JavaScript</span>
+                    <span>Адаптивная вёрстка</span>
+                    <span>SEO</span>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="hero-visual">
-                <div class="hero-image-wrapper">
-                    <div class="hero-image-placeholder"></div>
+    <!-- ОТЗЫВЫ -->
+    <section id="reviews" class="reviews-section">
+        <div class="reviews-header">
+            <span class="section-badge">
+                <i class='bx bx-message-dots'></i> ОТЗЫВЫ
+            </span>
+            <h2 class="section-title">Что говорят клиенты</h2>
+            <p class="section-subtitle">Каждый отзыв — это шаг к доверию. Я только начинаю, но уже собираю обратную связь.</p>
+        </div>
+
+        <div class="reviews-grid">
+            <div class="review-card invite-review">
+                <div class="review-stars">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.2);"></i>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <main>
-        <section id="services" class="services-section">
-            <div class="services-header">
-                <span class="services-badge">
-                    <i class='bx bx-grid-alt'></i> МОИ УСЛУГИ
-                </span>
-                <h2>Комплексные решения <br>под ваши задачи</h2>
-                <p class="services-subtitle">Беру на себя всю работу — от анализа до результата.</p>
-            </div>
-
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="card-icon">
-                        <i class='bx bx-code'></i>
+                <p class="review-text">
+                    "Пока здесь нет отзывов, но я уверен — вы будете первым, кто его оставит! 
+                    Работаем честно, качественно и с душой."
+                </p>
+                <div class="review-author">
+                    <div class="review-avatar" style="background: linear-gradient(135deg, #7c3aed, #4a5aff);">
+                        <i class='bx bx-user'></i>
                     </div>
-                    <h3>Сайт-визитка</h3>
-                    <p>Создам стильный одностраничный сайт для вашего бизнеса. Адаптив, форма связи, быстрый запуск.</p>
-                    <ul class="service-features">
-                        <li><i class='bx bx-check-circle'></i> Адаптивный дизайн</li>
-                        <li><i class='bx bx-check-circle'></i> Форма обратной связи</li>
-                        <li><i class='bx bx-check-circle'></i> Базовое SEO</li>
-                    </ul>
-                    <div class="price-wrapper">
-                        <div class="prise">10 000 ₽</div>
-                       <!-- <span class="price-old">10 000 ₽</span>
-                        <span class="price-new">2 990 ₽</span> 
-                       <span class="price-badge">🔥 Скидка 70%</span> -->
-                    </div>
-                    <a href="#contacts" class="service-link">Узнать подробнее →</a>
-                </div>
-                <div class="service-card popular">
-                    <div class="card-badge">🔥 Самый популярный</div>
-                    <div class="card-icon">
-                        <i class='bx bx-laptop'></i>
-                    </div>
-                    <h3>Корпоративный сайт</h3>
-                    <p>Полноценный сайт для компании с админ-панелью. Можете редактировать контент самостоятельно.</p>
-                    <ul class="service-features">
-                        <li><i class='bx bx-check-circle'></i> До 5 страниц</li>
-                        <li><i class='bx bx-check-circle'></i> Админ-панель</li>
-                        <li><i class='bx bx-check-circle'></i> Каталог услуг</li>
-                        <li><i class='bx bx-check-circle'></i> 3 месяца поддержки</li>
-                    </ul>
-                    <div class="prise">25 000 ₽</div>
-                    <a href="#contacts" class="service-link">Узнать подробнее →</a>
-                </div>
-                <div class="service-card">
-                    <div class="card-icon">
-                        <i class='bx bx-store'></i>
-                    </div>
-                    <h3>Интернет-магазин</h3>
-                    <p>Готовый интернет-магазин с корзиной, оплатой и личным кабинетом для ваших товаров.</p>
-                    <ul class="service-features">
-                        <li><i class='bx bx-check-circle'></i> Каталог с фильтрами</li>
-                        <li><i class='bx bx-check-circle'></i> Корзина и оплата</li>
-                        <li><i class='bx bx-check-circle'></i> Личный кабинет</li>
-                        <li><i class='bx bx-check-circle'></i> 6 месяцев поддержки</li>
-                    </ul>
-                    <div class="prise">45 000 ₽</div>
-                    <a href="#contacts" class="service-link">Узнать подробнее →</a>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <main>
-        <section id="cases" class="cases-section">
-            <div class="cases-header">
-                <span class="cases-badge">
-                    <i class='bx bx-folder-open'></i> ПОРТФОЛИО
-                </span>
-                <h2>Мои проекты</h2>
-                <p class="cases-subtitle">Каждый проект — это шаг вперёд. Сейчас я активно пополняю портфолио.</p>
-            </div>
-
-            <div class="cases-grid">
-                <div class="case-card invite-card">
-                    <div class="case-image placeholder">
-                        <i class='bx bx-rocket'></i>
-                    </div>
-                    <div class="case-content">
-                        <span class="case-status">💼 Хотите быть первым?</span>
-                        <h3>Ваш проект может стать моим главным кейсом</h3>
-                        <p>Я ищу интересные задачи для портфолио. Оставьте заявку — и мы создадим крутой сайт вместе!</p>
-                        <div class="offer-benefits">
-                            <span>✨ Индивидуальный подход</span>
-                            <span>⚡ Быстрый старт</span>
-                            <span>🎯 Результат</span>
-                        </div>
-                        <a href="#contacts" class="case-link primary">Обсудить проект →</a>
+                    <div>
+                        <h4>Вы можете быть первым!</h4>
+                        <span>Оставьте отзыв после работы</span>
                     </div>
                 </div>
+                <div class="review-offer">
+                    <span>✨ Работаю на результат</span>
+                    <span>🤝 Честность и открытость</span>
+                    <span>📱 Всегда на связи</span>
+                </div>
+                <a href="#contacts" class="review-btn">
+                    <i class='bx bx-chat'></i> Связаться со мной
+                </a>
             </div>
-        </section>
-    </main>
-
-    <main>
-        <section id="about" class="about-section">
-            <div class="about-container">
-                <div class="about-content">
-                    <span class="about-badge">
-                        <i class='bx bx-user'></i> ОБО МНЕ
-                    </span>
-                    <h2>Привет! Я Александр</h2>
-                    <p class="about-text">
-                        Веб-разработчик, который любит <span class="highlight">порядок в коде</span> и 
-                        <span class="highlight">чистоту в дизайне</span>.
-                    </p>
-                    <p class="about-text">
-                        Работаю на фрилансе, потому что ценю гибкость, прямой контакт с заказчиком 
-                        и свободу выбирать задачи под свой стиль.
-                    </p>
-                    <p class="about-text">
-                        Мне важно, чтобы сайт не просто красиво выглядел, а был 
-                        <span class="highlight">удобным, быстрым и понятным</span> любому пользователю.
-                    </p>
-                    <div class="about-principle">
-                        <span>🧠</span>
-                        <p>«Сделано — значит работает без вопросов»</p>
+            <div class="review-card invite-review secondary">
+                <div class="review-stars">
+                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
+                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
+                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
+                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
+                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
+                </div>
+                <p class="review-text">
+                    "Здесь могут быть ваши слова о моей работе. 
+                    Я стараюсь, чтобы каждый клиент остался доволен!"
+                </p>
+                <div class="review-author">
+                    <div class="review-avatar" style="background: rgba(124, 58, 237, 0.15);">
+                        <i class='bx bx-smile'></i>
                     </div>
-                    <div class="about-skills">
-                        <span>HTML</span>
-                        <span>CSS</span>
-                        <span>JavaScript</span>
-                        <span>Адаптивная вёрстка</span>
-                        <span>SEO</span>
+                    <div>
+                        <h4>Ваш отзыв</h4>
+                        <span>Будет здесь после проекта</span>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
-
-    <main>
-        <section id="reviews" class="reviews-section">
-            <div class="reviews-header">
-                <span class="reviews-badge">
-                    <i class='bx bx-message-dots'></i> ОТЗЫВЫ
-                </span>
-                <h2>Что говорят клиенты</h2>
-                <p class="reviews-subtitle">Каждый отзыв — это шаг к доверию. Я только начинаю, но уже собираю обратную связь.</p>
-            </div>
-
-            <div class="reviews-grid">
-                <!-- Карточка 1 -->
-                <div class="review-card invite-review">
-                    <div class="review-content">
-                        <div class="review-stars">
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star'></i>
-                            <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.2);"></i>
-                        </div>
-                        <p class="review-text">
-                            "Пока здесь нет отзывов, но я уверен — вы будете первым, кто его оставит! 
-                            Работаем честно, качественно и с душой."
-                        </p>
-                        <div class="review-author">
-                            <div class="review-avatar" style="background: linear-gradient(135deg, #7c3aed, #4a5aff);">
-                                <i class='bx bx-user'></i>
-                            </div>
-                            <div>
-                                <h4>Вы можете быть первым!</h4>
-                                <span>Оставьте отзыв после работы</span>
-                            </div>
-                        </div>
-                        <div class="review-offer">
-                            <span>✨ Работаю на результат</span>
-                            <span>🤝 Честность и открытость</span>
-                            <span>📱 Всегда на связи</span>
-                        </div>
-                        <a href="#contacts" class="review-btn">
-                            <i class='bx bx-chat'></i> Связаться со мной
-                        </a>
-                    </div>
+                <div class="review-offer">
+                    <span>💎 Качество превыше всего</span>
+                    <span>⚡ Быстро и в срок</span>
                 </div>
-                <div class="review-card invite-review secondary">
-                    <div class="review-content">
-                        <div class="review-stars">
-                            <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                            <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                            <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                            <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                            <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                        </div>
-                        <p class="review-text">
-                            "Здесь могут быть ваши слова о моей работе. 
-                            Я стараюсь, чтобы каждый клиент остался доволен!"
-                        </p>
-                        <div class="review-author">
-                            <div class="review-avatar" style="background: rgba(124, 58, 237, 0.15);">
-                                <i class='bx bx-smile'></i>
-                            </div>
-                            <div>
-                                <h4>Ваш отзыв</h4>
-                                <span>Будет здесь после проекта</span>
-                            </div>
-                        </div>
-                        <div class="review-offer">
-                            <span>💎 Качество превыше всего</span>
-                            <span>⚡ Быстро и в срок</span>
-                        </div>
-                        <a href="#cases" class="review-btn secondary">
-                            <i class='bx bx-folder-open'></i> Посмотреть работы
-                        </a>
-                    </div>
-                </div>
+                <a href="#cases" class="review-btn secondary">
+                    <i class='bx bx-folder-open'></i> Посмотреть работы
+                </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
-    <main>
+    <!-- ГАРАНТИЯ -->
+    <section class="guarantee-section">
+        <div style="text-align:center; margin-bottom: 40px;">
+            <span class="section-badge"><i class='bx bx-shield'></i> ГАРАНТИЯ</span>
+            <h2 class="section-title">Почему мне доверяют</h2>
+        </div>
+        <div class="guarantee-grid">
+            <div class="guarantee-item">
+                <i class='bx bx-check-circle'></i>
+                <h4>Возврат средств</h4>
+                <p>Если результат не устроит — верну деньги</p>
+            </div>
+            <div class="guarantee-item">
+                <i class='bx bx-time'></i>
+                <h4>Сроки</h4>
+                <p>Всегда укладываюсь в договорённости</p>
+            </div>
+            <div class="guarantee-item">
+                <i class='bx bx-support'></i>
+                <h4>Поддержка</h4>
+                <p>Бесплатная помощь 3 месяца после запуска</p>
+            </div>
+            <div class="guarantee-item">
+                <i class='bx bx-lock'></i>
+                <h4>Безопасность</h4>
+                <p>Защита от взлома и регулярные обновления</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- КОНТАКТЫ -->
     <section id="contacts" class="contacts-section">
         <div class="contacts-container">
             <div class="contacts-header">
-                <span class="contacts-badge">
+                <span class="section-badge">
                     <i class='bx bx-phone'></i> КОНТАКТЫ
                 </span>
-                <h2>Готовы обсудить ваш проект?</h2>
-                <p class="contacts-subtitle">
-                    Оставьте заявку — я свяжусь с вами в ближайшее время и предложу решение.
-                </p>
+                <h2 class="section-title">Готовы обсудить ваш проект?</h2>
+                <p class="section-subtitle">Оставьте заявку — я свяжусь с вами в ближайшее время.</p>
             </div>
 
             <div class="contacts-glass">
                 <div class="contacts-grid">
-                    <!-- Левая часть — информация -->
                     <div class="contacts-info">
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class='bx bx-phone'></i>
-                            </div>
+                            <div class="contact-icon"><i class='bx bx-phone'></i></div>
                             <div>
                                 <span class="contact-label">Телефон</span>
                                 <span class="contact-value">+7 (927) 650-00-29</span>
                             </div>
                         </div>
-
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class='bx bx-envelope'></i>
-                            </div>
+                            <div class="contact-icon"><i class='bx bx-envelope'></i></div>
                             <div>
                                 <span class="contact-label">E-mail</span>
                                 <span class="contact-value">Goodliveman1@yandex.ru</span>
                             </div>
                         </div>
-
                         <div class="contact-item">
-                            <div class="contact-icon">
-                                <i class='bx bx-map'></i>
-                            </div>
+                            <div class="contact-icon"><i class='bx bx-map'></i></div>
                             <div>
                                 <span class="contact-label">Адрес</span>
                                 <span class="contact-value">г. Самара</span>
                             </div>
                         </div>
 
-                        <!-- НОВАЯ КНОПКА ВК -->
                         <div class="contacts-vk">
                             <a href="https://vk.com/idsanapolozkov" target="_blank" class="vk-btn">
-                                <i class='bx bxl-vk'></i>
-                                Написать в ВКонтакте
+                                <i class='bx bxl-vk'></i> Написать в ВКонтакте
                             </a>
                             <span class="vk-hint">Быстрый ответ в течение 10 минут</span>
                         </div>
-
                         <div class="contacts-note">
                             <p>📌 Отвечаю в течение 10 минут</p>
                         </div>
                     </div>
 
-                    <!-- Правая часть — форма -->
                     <div class="contacts-form">
                         <form id="contactForm">
                             <div class="form-row">
@@ -369,16 +430,13 @@
                                     <input type="tel" placeholder="Телефон" required>
                                 </div>
                             </div>
-
                             <div class="form-group">
                                 <input type="text" placeholder="Как с вами связаться? (Telegram, VK, email...)" required>
                             </div>
-
                             <div class="form-group">
-                                <textarea rows="3" placeholder="Сообщение"></textarea>
+                                <textarea rows="3" placeholder="Сообщение" id="formMessage"></textarea>
                             </div>
 
-                            <!-- ВАЖНОЕ УВЕДОМЛЕНИЕ -->
                             <div class="form-notice">
                                 <i class='bx bx-info-circle'></i>
                                 <span>Если форма не отправляется, включите <strong>VPN</strong> или напишите в <strong>ВКонтакте</strong> (кнопка слева)</span>
@@ -389,8 +447,8 @@
                                     <input type="checkbox" required>
                                     <span class="checkmark"></span>
                                     <span class="checkbox-text">
-                                        Я принимаю условия <a href="policy.html" class="policy-link">пользовательского соглашения (оферты)</a>, 
-                                        согласен с <a href="oferta.html" class="policy-link">политикой конфиденциальности</a> 
+                                        Я принимаю условия <a href="oferta.html" class="policy-link">пользовательского соглашения (оферты)</a>, 
+                                        согласен с <a href="policy.html" class="policy-link">политикой конфиденциальности</a> 
                                         и даю согласие на обработку персональных данных в соответствии с 
                                         Федеральным законом № 152-ФЗ
                                     </span>
@@ -406,8 +464,8 @@
             </div>
         </div>
     </section>
-</main>
 
+    <!-- ФУТЕР -->
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-grid">
@@ -417,8 +475,8 @@
                         <span class="footer-logo-text">APVIZIT</span>
                     </div>
                     <p class="footer-description">
-                        Создаю современные сайты под ключ. <br>
-                        Работаю быстро, официально и с гарантией.
+                        Создаю современные сайты под ключ.<br>
+                        Работаю официально, быстро и с гарантией.
                     </p>
                     <div class="footer-social">
                         <a href="#" class="footer-social-link"><i class='bx bxl-telegram'></i></a>
@@ -431,7 +489,7 @@
                     <ul class="footer-links">
                         <li><a href="#heros">Главная</a></li>
                         <li><a href="#services">Услуги</a></li>
-                        <li><a href="#cases">Кейсы</a></li>
+                        <li><a href="#cases">Проекты</a></li>
                         <li><a href="#about">Обо мне</a></li>
                         <li><a href="#reviews">Отзывы</a></li>
                         <li><a href="#contacts">Контакты</a></li>
@@ -473,7 +531,8 @@
             </div>
         </div>
     </footer>
+
+    <script src="config.js"></script>
+    <script src="script.js"></script>
 </body>
-<script src="config.js"></script>
-<script src="script.js"></script>
 </html>

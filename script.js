@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
 
-    // ─── ПРОВЕРКА КОНФИГУРАЦИИ ──────────────────────────────
+    // ─── ПРОВЕРКА КОНФИГА ──────────────────────────────
 
     if (typeof CONFIG === 'undefined') {
         console.warn('⚠️ CONFIG не загружен!');
@@ -11,18 +11,75 @@ document.addEventListener('DOMContentLoaded', function() {
     const TELEGRAM_CHAT_ID = CONFIG ? CONFIG.TELEGRAM_CHAT_ID : null;
     const VK_PROFILE_URL = CONFIG ? CONFIG.VK_PROFILE_URL : 'https://vk.com/idsanapolozkov';
 
-    // ─── ЭЛЕМЕНТЫ ──────────────────────────────────────────────
+    // ─── ПРЕЛОАДЕР ──────────────────────────────────────
+
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        setTimeout(() => {
+            preloader.classList.add('hidden');
+        }, 1200);
+    }
+
+    // ─── ЭЛЕМЕНТЫ ──────────────────────────────────────
 
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('section[id]');
     const header = document.querySelector('header');
-    const heroSection = document.querySelector('.hero-section');
-    const heroContent = document.querySelector('.hero-content');
-    const heroVisual = document.querySelector('.hero-visual');
     const contactForm = document.getElementById('contactForm');
 
+    // ─── ЧАСТИЦЫ (3D-фон) ─────────────────────────────
 
-    // ─── 1. ПЛАВНЫЙ СКРОЛЛ ────────────────────────────────────
+    const canvas = document.getElementById('particles');
+    if (canvas) {
+        const ctx = canvas.getContext('2d');
+        let width, height, particles = [];
+
+        function resize() {
+            width = canvas.width = canvas.parentElement.offsetWidth;
+            height = canvas.height = canvas.parentElement.offsetHeight;
+        }
+        resize();
+        window.addEventListener('resize', resize);
+
+        class Particle {
+            constructor() {
+                this.x = Math.random() * width;
+                this.y = Math.random() * height;
+                this.size = Math.random() * 2 + 0.5;
+                this.speedX = (Math.random() - 0.5) * 0.8;
+                this.speedY = (Math.random() - 0.5) * 0.8;
+                this.opacity = Math.random() * 0.5 + 0.2;
+            }
+            update() {
+                this.x += this.speedX;
+                this.y += this.speedY;
+                if (this.x < 0 || this.x > width) this.speedX *= -1;
+                if (this.y < 0 || this.y > height) this.speedY *= -1;
+            }
+            draw() {
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(124, 140, 255, ${this.opacity})`;
+                ctx.fill();
+            }
+        }
+
+        for (let i = 0; i < 80; i++) {
+            particles.push(new Particle());
+        }
+
+        function animateParticles() {
+            ctx.clearRect(0, 0, width, height);
+            particles.forEach(p => {
+                p.update();
+                p.draw();
+            });
+            requestAnimationFrame(animateParticles);
+        }
+        animateParticles();
+    }
+
+    // ─── ПЛАВНЫЙ СКРОЛЛ ───────────────────────────────
 
     navLinks.forEach(link => {
         link.addEventListener('click', function(e) {
@@ -40,15 +97,12 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
 
-
-    // ─── 2. ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ ─────────────────────────
+    // ─── ПОДСВЕТКА АКТИВНОЙ ССЫЛКИ ────────────────────
 
     function updateActiveLink() {
         const headerHeight = header.offsetHeight;
         const scrollPosition = window.scrollY + headerHeight + 60;
-
         let currentSectionId = '';
-
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.offsetHeight;
@@ -56,11 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 currentSectionId = section.getAttribute('id');
             }
         });
-
-        if (!currentSectionId && window.scrollY < 100) {
-            currentSectionId = 'heros';
-        }
-
+        if (!currentSectionId && window.scrollY < 100) currentSectionId = 'heros';
         navLinks.forEach(link => {
             link.classList.remove('active');
             if (link.getAttribute('href') === '#' + currentSectionId) {
@@ -68,30 +118,34 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }
-
     window.addEventListener('scroll', updateActiveLink);
     setTimeout(updateActiveLink, 100);
 
+    // ─── ХЕДЕР С БЛЮРОМ ───────────────────────────────
 
-    // ─── 3. АНИМАЦИЯ ПОЯВЛЕНИЯ КАРТОЧЕК ──────────────────────
+    function updateHeader() {
+        if (window.scrollY > 50) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    }
+    window.addEventListener('scroll', updateHeader);
+    updateHeader();
+
+    // ─── АНИМАЦИЯ ПОЯВЛЕНИЯ ───────────────────────────
 
     const animatedElements = document.querySelectorAll(
-        '.service-card, .case-card, .review-card, .about-content'
+        '.service-card, .case-card, .review-card, .about-content, .guarantee-item'
     );
-
-    const observerOptions = {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
+    const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
                 entry.target.style.opacity = '1';
                 entry.target.style.transform = 'translateY(0)';
             }
         });
-    }, observerOptions);
+    }, { threshold: 0.15, rootMargin: '0px 0px -50px 0px' });
 
     animatedElements.forEach(el => {
         el.style.opacity = '0';
@@ -100,55 +154,17 @@ document.addEventListener('DOMContentLoaded', function() {
         observer.observe(el);
     });
 
-
-    // ─── 4. ПАРАЛЛАКС ДЛЯ HERO ────────────────────────────────
-
-    if (heroSection && heroContent && heroVisual) {
-        document.addEventListener('mousemove', function(e) {
-            const x = (e.clientX / window.innerWidth - 0.5) * 8;
-            const y = (e.clientY / window.innerHeight - 0.5) * 8;
-
-            heroContent.style.transform = `translate(${x * -0.5}px, ${y * -0.5}px)`;
-            heroVisual.style.transform = `translate(${x * 0.5}px, ${y * 0.5}px)`;
-        });
-    }
-
-
-    // ─── 5. ХЕДЕР С БЛЮРОМ ────────────────────────────────────
-
-    function updateHeader() {
-        const scrollY = window.scrollY;
-        if (scrollY > 50) {
-            header.style.background = 'rgba(11, 8, 27, 0.85)';
-            header.style.backdropFilter = 'blur(16px)';
-            header.style.webkitBackdropFilter = 'blur(16px)';
-            header.style.borderBottom = '1px solid rgba(255, 255, 255, 0.04)';
-        } else {
-            header.style.background = 'transparent';
-            header.style.backdropFilter = 'none';
-            header.style.webkitBackdropFilter = 'none';
-            header.style.borderBottom = 'none';
-        }
-    }
-
-    window.addEventListener('scroll', updateHeader);
-    updateHeader();
-
-
-    // ─── 6. СЧЁТЧИК СТАТИСТИКИ ────────────────────────────────
+    // ─── СЧЁТЧИК СТАТИСТИКИ ───────────────────────────
 
     const stats = document.querySelectorAll('.stat-number');
-
     stats.forEach(stat => {
         const originalText = stat.textContent;
         const numberMatch = originalText.match(/([\d.]+)/);
         const suffix = originalText.replace(numberMatch ? numberMatch[0] : '', '');
-
         if (numberMatch) {
             const targetNumber = parseFloat(numberMatch[0]);
             const isFloat = targetNumber % 1 !== 0;
-
-            const observerStat = new IntersectionObserver(function(entries) {
+            const observerStat = new IntersectionObserver((entries) => {
                 entries.forEach(entry => {
                     if (entry.isIntersecting) {
                         animateNumber(stat, targetNumber, suffix, isFloat);
@@ -156,7 +172,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
             }, { threshold: 0.3 });
-
             observerStat.observe(stat);
         }
     });
@@ -164,41 +179,52 @@ document.addEventListener('DOMContentLoaded', function() {
     function animateNumber(element, target, suffix, isFloat) {
         const duration = 1500;
         const startTime = performance.now();
-        const startValue = 0;
-
         function update(currentTime) {
             const elapsed = currentTime - startTime;
             const progress = Math.min(elapsed / duration, 1);
             const ease = 1 - Math.pow(1 - progress, 3);
-            const currentValue = startValue + (target - startValue) * ease;
-
+            const currentValue = target * ease;
             if (isFloat) {
                 element.textContent = currentValue.toFixed(1) + suffix;
             } else {
                 element.textContent = Math.round(currentValue) + suffix;
             }
-
             if (progress < 1) {
                 requestAnimationFrame(update);
             } else {
                 element.textContent = target + suffix;
             }
         }
-
         requestAnimationFrame(update);
     }
 
+    // ─── КАЛЬКУЛЯТОР ──────────────────────────────────
 
-    // ─── 7. ОТПРАВКА В TELEGRAM ──────────────────────────────
+    const calcRange = document.getElementById('calcRange');
+    const calcPages = document.getElementById('calcPages');
+    const calcTotal = document.getElementById('calcTotal');
+
+    if (calcRange && calcPages && calcTotal) {
+        function updateCalc() {
+            const pages = parseInt(calcRange.value);
+            calcPages.textContent = pages;
+            let price = 10000;
+            if (pages > 1) price = 10000 + (pages - 1) * 3000;
+            if (pages > 10) price = 10000 + 9 * 3000 + (pages - 10) * 2000;
+            calcTotal.textContent = price.toLocaleString('ru-RU') + ' ₽';
+        }
+        calcRange.addEventListener('input', updateCalc);
+        updateCalc();
+    }
+
+    // ─── ОТПРАВКА В TELEGRAM ─────────────────────────
 
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
-
             const btn = this.querySelector('.submit-btn');
             const originalText = btn.innerHTML;
 
-            // Проверяем наличие токена
             if (!TELEGRAM_TOKEN || !TELEGRAM_CHAT_ID) {
                 btn.innerHTML = '⚠️ Настройте бота';
                 btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
@@ -207,8 +233,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     btn.innerHTML = originalText;
                     btn.style.background = '';
                 }, 4000);
-
-                // Открываем VK как альтернативу
                 if (confirm('📌 Бот не настроен. Написать в ВКонтакте?')) {
                     window.open(VK_PROFILE_URL, '_blank');
                 }
@@ -219,13 +243,12 @@ document.addEventListener('DOMContentLoaded', function() {
             btn.innerHTML = '⏳ Отправка...';
             btn.style.opacity = '0.7';
 
-            // Собираем данные
             const name = this.querySelector('input[placeholder="Имя"]').value.trim();
             const phone = this.querySelector('input[placeholder="Телефон"]').value.trim();
             const contact = this.querySelector('input[placeholder*="связаться"]').value.trim() || 'Не указан';
             const message = this.querySelector('textarea').value.trim() || 'Без сообщения';
 
-            const text = `📩 НОВАЯ ЗАЯВКА С САЙТА!
+            const text = `📩 НОВАЯ ЗАЯВКА С APVIZIT
 
 👤 Имя: ${name}
 📞 Телефон: ${phone}
@@ -233,13 +256,11 @@ document.addEventListener('DOMContentLoaded', function() {
 📝 Сообщение: ${message}
 
 🕐 ${new Date().toLocaleString('ru-RU')}
-🌐 Отправлено с APVIZIT`;
+🌐 Отправлено с APVIZIT (2026)`;
 
             fetch(`https://api.telegram.org/bot${TELEGRAM_TOKEN}/sendMessage`, {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
+                headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({
                     chat_id: TELEGRAM_CHAT_ID,
                     text: text,
@@ -257,7 +278,6 @@ document.addEventListener('DOMContentLoaded', function() {
                     btn.disabled = false;
                     btn.style.opacity = '1';
                     contactForm.reset();
-
                     setTimeout(() => {
                         btn.innerHTML = originalText;
                         btn.style.background = '';
@@ -271,12 +291,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 btn.style.background = 'linear-gradient(135deg, #ff6b6b, #ee5a24)';
                 btn.disabled = false;
                 btn.style.opacity = '1';
-
                 setTimeout(() => {
                     btn.innerHTML = originalText;
                     btn.style.background = '';
                 }, 4000);
-
                 if (confirm('❌ Не удалось отправить через бота. Написать в ВКонтакте?')) {
                     window.open(VK_PROFILE_URL, '_blank');
                 }
@@ -284,8 +302,7 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-
-    // ─── 8. КНОПКА "НАВЕРХ" ──────────────────────────────────
+    // ─── КНОПКА НАВЕРХ ────────────────────────────────
 
     const topBtn = document.createElement('button');
     topBtn.innerHTML = '↑';
@@ -314,12 +331,10 @@ document.addEventListener('DOMContentLoaded', function() {
         this.style.transform = 'scale(1.1)';
         this.style.boxShadow = '0 12px 40px rgba(60, 80, 255, 0.4)';
     });
-
     topBtn.addEventListener('mouseleave', function() {
         this.style.transform = 'scale(1)';
         this.style.boxShadow = '0 8px 28px rgba(60, 80, 255, 0.25)';
     });
-
     topBtn.addEventListener('click', function() {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
@@ -334,8 +349,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-
-    // ─── 9. ПРОГРЕСС-БАР ──────────────────────────────────────
+    // ─── ПРОГРЕСС-БАР ──────────────────────────────────
 
     const progressBar = document.createElement('div');
     progressBar.style.cssText = `
@@ -358,10 +372,35 @@ document.addEventListener('DOMContentLoaded', function() {
         progressBar.style.width = scrollPercent + '%';
     });
 
+    // ─── ПЛАВАЮЩАЯ КНОПКА ──────────────────────────────
 
-    // ─── 10. ИНИЦИАЛИЗАЦИЯ ────────────────────────────────────
+    const floatingBtn = document.createElement('a');
+    floatingBtn.className = 'floating-btn';
+    floatingBtn.href = '#contacts';
+    floatingBtn.innerHTML = '<i class="bx bx-phone-call"></i> Связаться';
+    document.body.appendChild(floatingBtn);
 
-    console.log('🚀 APVIZIT — сайт загружен!');
+    // ─── БЫСТРЫЙ ЗАКАЗ (заполнение формы) ─────────────
+
+    const orderBtns = document.querySelectorAll('.order-btn');
+    const messageField = document.getElementById('formMessage');
+    if (orderBtns.length && messageField) {
+        orderBtns.forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                const service = this.dataset.service || 'Услуга';
+                messageField.value = `Заказ пакета: ${service}`;
+                messageField.focus();
+                messageField.style.borderColor = '#2ed573';
+                setTimeout(() => {
+                    messageField.style.borderColor = '';
+                }, 3000);
+            });
+        });
+    }
+
+    // ─── ИНИЦИАЛИЗАЦИЯ ─────────────────────────────────
+
+    console.log('🚀 APVIZIT 2026 — сайт загружен!');
     if (TELEGRAM_TOKEN && TELEGRAM_CHAT_ID) {
         console.log('📩 Telegram бот: активен ✅');
     } else {
@@ -369,5 +408,4 @@ document.addEventListener('DOMContentLoaded', function() {
         console.log('📌 Для настройки создайте config.js');
     }
     console.log(`🔗 VK: ${VK_PROFILE_URL}`);
-
 });

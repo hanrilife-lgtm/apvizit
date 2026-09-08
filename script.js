@@ -1,4 +1,5 @@
 const WORKER_URL = 'https://snowy-water-5b76.hanrilife.workers.dev';
+
 document.addEventListener('DOMContentLoaded', function() {
   const hamburger = document.getElementById('hamburger');
   const navLinks = document.querySelector('.nav-links');
@@ -16,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// ===== КАЛЬКУЛЯТОР ПРИБЫЛИ =====
 document.addEventListener('DOMContentLoaded', function() {
   const avgCheck = document.getElementById('avgCheck');
   const newClients = document.getElementById('newClients');
@@ -35,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
+// ===== ТАЙМЕР =====
 document.addEventListener('DOMContentLoaded', function() {
   const endDate = new Date();
   endDate.setDate(endDate.getDate() + 7);
@@ -65,48 +68,39 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
   const form = document.getElementById('leadForm');
-  const formCard = document.getElementById('formCard');
   const successDiv = document.getElementById('successMessage');
   
-  if (!form || !formCard || !successDiv) return;
-  
+  if (!form) return;
+
   form.addEventListener('submit', async function(e) {
     e.preventDefault();
     
-    const name = document.getElementById('userName').value.trim();
-    const phone = document.getElementById('userPhone').value.trim();
-    const budget = document.getElementById('userBudget').value;
-    const confidential = document.getElementById('confidentialityAgree')?.checked || false;
-    
-    if (!name || !phone || !budget) {
-      alert('Пожалуйста, заполните все поля формы.');
-      return;
-    }
+    const formData = new FormData(form);
     
     try {
-      const response = await fetch(WORKER_URL, {
+      const response = await fetch('https://formspree.io/f/xwlkrgoa', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          name: name,
-          phone: phone,
-          budget: budget,
-          confidential: confidential
-        })
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
       });
-      
-      const result = await response.json();
-      
-      if (result.success) {
+
+      if (response.ok) {
+        // Успех
         form.style.display = 'none';
-        successDiv.style.display = 'block';
+        if (successDiv) successDiv.style.display = 'block';
+        
+        // Отправляем уведомление в Telegram (дополнительно)
+        const name = document.getElementById('userName')?.value || '';
+        const phone = document.getElementById('userPhone')?.value || '';
+        const budget = document.getElementById('userBudget')?.value || '';
+        
       } else {
         alert('❌ Ошибка отправки. Попробуйте позже.');
-        console.error('Server error:', result);
       }
     } catch (error) {
       alert('❌ Ошибка соединения. Проверьте интернет.');
-      console.error('Fetch error:', error);
     }
   });
 });

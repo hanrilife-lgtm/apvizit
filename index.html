@@ -1,532 +1,811 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>APVIZIT — Веб-разработка 2026 | Создание сайтов под ключ</title>
-    <meta name="description" content="Веб-разработчик Александр. Современные сайты, интернет-магазины, корпоративные порталы. Работаю официально, быстро и с гарантией.">
-    <link rel="icon" type="image/png" href="logo.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="icon" href="logoappp.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>APVIZIT.RU — Создаём сайты, которые приносят деньги в Самаре</title>
+  <meta name="description" content="Разработка продающих сайтов для бизнеса. Запуск за 5 дней, гарантия роста заявок +20%, бесплатный аудит. Полная конфиденциальность.">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800;14..32,900&display=swap" rel="stylesheet">
+  
+  <link href='https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css' rel='stylesheet'>
+  <link href='https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css' rel='stylesheet'>
+  
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- ========== НАВИГАЦИЯ ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-container">
+      <div class="logo">
+        <span class="logo-icon">⚡</span>
+        <span class="logo-text">APVIZIT<span>.RU</span></span>
+      </div>
+      <div class="nav-links" id="navLinks">
+        <a href="#advantages">Почему мы</a>
+        <a href="#cases">Кейсы</a>
+        <a href="#about">О нас</a>
+        <a href="#form-section" class="btn-primary btn-small">Заказать сайт</a>
+      </div>
+      <div class="hamburger" id="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
 
-    <!-- ХЕДЕР -->
-    <header>
-        <a href="#heros" class="logo-block">
-            <img src="logoappp.png" alt="APVIZIT Logo" class="logo-img">
-            <span class="logo-text">APVIZIT</span>
+  <!-- ========== БЛОК HERO ========== -->
+  <section id="hero">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <i class="bx bx-rocket"></i> 🏆 Работаем в Самаре
+        </div>
+        <h1>Сайт, который <br><span>приносит деньги</span></h1>
+        <p class="hero-sub">
+          Разрабатываем сайты, которые окупаются за <strong>первый месяц</strong>. 
+          Средний рост заявок — <strong>+40%</strong>. Запуск от <strong>5 дней</strong>.
+        </p>
+        
+        <!-- ===== КАЛЬКУЛЯТОР ПРИБЫЛИ ===== -->
+        <div class="profit-calculator">
+          <div class="calc-header">
+            <i class="bxs bx-calculator"></i>
+            <span>Сколько вы заработаете с новым сайтом?</span>
+          </div>
+          <div class="calc-body">
+            <div class="calc-row">
+              <span>Средний чек клиента</span>
+              <input type="number" id="avgCheck" value="5000" placeholder="₽">
+            </div>
+            <div class="calc-row">
+              <span>Новых клиентов в месяц</span>
+              <input type="number" id="newClients" value="10" placeholder="шт">
+            </div>
+            <div class="calc-result">
+              <span>Ваша прибыль в месяц:</span>
+              <strong id="profitResult">50 000 ₽</strong>
+            </div>
+            <div class="calc-note">
+              <i class="bx bx-info-circle"></i> 
+              С нашим сайтом вы получите <strong>минимум +20%</strong> к этим цифрам
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">5</span>
+            <span class="stat-label">дней до запуска</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">+40%</span>
+            <span class="stat-label">рост заявок</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">10+</span>
+            <span class="stat-label">проектов в 2026</span>
+          </div>
+        </div>
+        
+        <!-- ===== УНИКАЛЬНОЕ ПРЕДЛОЖЕНИЕ ===== -->
+        <div class="unique-offer">
+          <div class="offer-item">
+            <i class="bxs bx-gift"></i>
+            <div>
+              <span class="offer-title">🎁 Бесплатный аудит сайта</span>
+              <span class="offer-desc">в подарок при заказе</span>
+            </div>
+          </div>
+          <div class="offer-divider"></div>
+          <div class="offer-item">
+            <i class="bxs bx-trophy"></i>
+            <div>
+              <span class="offer-title">📈 Гарантия +20% заявок</span>
+              <span class="offer-desc">или вернём деньги</span>
+            </div>
+          </div>
+          <div class="offer-divider"></div>
+          <div class="offer-item">
+            <i class="bxs bx-shield"></i>
+            <div>
+              <span class="offer-title">🔒 Полная конфиденциальность</span>
+              <span class="offer-desc">NDA по запросу</span>
+            </div>
+          </div>
+        </div>
+        
+        <div class="hero-buttons">
+          <a href="#form-section" class="btn-primary pulse">
+            <i class="bxs bx-paper-plane"></i> Получить КП за 10 минут
+          </a>
+          <a href="#process" class="btn-outline">
+            <i class="bx bx-play-circle"></i> Как мы работаем
+          </a>
+        </div>
+        
+        <!-- ===== БЛОК СРОЧНОСТИ ===== -->
+        <div class="urgency-block">
+          <i class="bx bx-time-five"></i>
+          <span>Осталось <strong>3 места</strong> на этот месяц со скидкой <strong>15%</strong></span>
+        </div>
+        
+        <div class="trust-badge">
+          <span class="trust-item"><i class="bxs bx-check-circle"></i> Самозанятость с чеком</span>
+          <span class="trust-item"><i class="bx bx-mobile-alt"></i> Адаптив под любой экран</span>
+          <span class="trust-item"><i class="bx bx-bolt"></i> Запуск за 5 дней</span>
+          <span class="trust-item"><i class="bxs bx-lock-alt"></i> Конфиденциальность</span>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-card">
+          <div class="hero-card-content">
+            <div class="hero-card-icon">🚀</div>
+            <h3>Начните зарабатывать</h3>
+            <p>Оставьте заявку и получите<br><strong>бесплатный аудит</strong> вашего сайта</p>
+            <a href="#form-section" class="btn-primary" style="width:100%; text-align:center; justify-content:center;">
+              <i class="bx bx-arrow-right"></i> Получить аудит
+            </a>
+            <div class="card-bonus">
+              <i class="bx bx-lock-alt"></i> Ваши данные <strong>под защитой</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК ПРЕИМУЩЕСТВ ========== -->
+  <section id="advantages">
+    <div class="container">
+      <div class="section-label">Почему выбирают нас</div>
+      <h2>Ваш бизнес будет <span>расти</span></h2>
+      <p class="section-desc">Каждый клиент получает не просто сайт, а полноценный инструмент для заработка</p>
+      <div class="advantages-grid">
+        <div class="advantage-card">
+          <div class="advantage-icon">🎯</div>
+          <h3>Продающий дизайн</h3>
+          <p>Конверсия до 15% — в 3 раза выше среднего по рынку</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">⚡</div>
+          <h3>Быстрый запуск</h3>
+          <p>От идеи до готового сайта за 5 дней. Вы не теряете время и деньги</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">💰</div>
+          <h3>Прозрачная цена</h3>
+          <p>Фиксированная стоимость. Без скрытых платежей и сюрпризов</p>
+        </div>
+        <div class="advantage-card">
+          <div class="advantage-icon">🔒</div>
+          <h3>Конфиденциальность</h3>
+          <p>Подписываем NDA. Ваши данные и идеи надёжно защищены</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК «ПОЧЕМУ СЕЙЧАС» ========== -->
+  <section id="why-now">
+    <div class="container">
+      <div class="why-now-wrapper">
+        <div class="why-now-content">
+          <div class="section-label">⏰ Ограниченное предложение</div>
+          <h2>Почему стоит <span>начать сейчас</span></h2>
+          <ul class="why-now-list">
+            <li>
+              <i class="bxs bx-calendar-check"></i>
+              <div>
+                <strong>Сезон продаж</strong>
+                <p>Сейчас самый высокий спрос — начните зарабатывать прямо сейчас</p>
+              </div>
+            </li>
+            <li>
+              <i class="bxs bx-discount"></i>
+              <div>
+                <strong>Скидка 15%</strong>
+                <p>Только на 3 проекта в этом месяце. Экономия до 15 000 ₽</p>
+              </div>
+            </li>
+            <li>
+              <i class="bxs bx-bar-chart-alt-2"></i>
+              <div>
+                <strong>Опередите конкурентов</strong>
+                <p>Пока они думают — вы уже получаете клиентов</p>
+              </div>
+            </li>
+          </ul>
+          <a href="#form-section" class="btn-primary pulse">
+            <i class="bxs bx-paper-plane"></i> Забронировать скидку
+          </a>
+        </div>
+        <div class="why-now-visual">
+          <div class="timer-box">
+            <div class="timer-label">До конца акции:</div>
+            <div class="timer" id="timer">
+              <div class="timer-item">
+                <span id="days">00</span>
+                <span>дней</span>
+              </div>
+              <span class="timer-sep">:</span>
+              <div class="timer-item">
+                <span id="hours">00</span>
+                <span>часов</span>
+              </div>
+              <span class="timer-sep">:</span>
+              <div class="timer-item">
+                <span id="minutes">00</span>
+                <span>минут</span>
+              </div>
+            </div>
+            <div class="timer-note">Осталось всего <strong>3 места</strong> по акции</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК «КАК МЫ РАБОТАЕМ» ========== -->
+  <section id="process">
+    <div class="container">
+      <div class="section-label">Процесс работы</div>
+      <h2>Как мы создаём <span>прибыльные сайты</span></h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">01</div>
+          <span class="step-icon">📞</span>
+          <h3>Звонок-знакомство</h3>
+          <p>Бесплатно анализируем ваш бизнес и даём ценные советы</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">02</div>
+          <span class="step-icon">📐</span>
+          <h3>Прототип за 1 день</h3>
+          <p>Согласовываем структуру, которая будет продавать</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">03</div>
+          <span class="step-icon">⚙️</span>
+          <h3>Запуск за 4 дня</h3>
+          <p>Вёрстка, настройка форм, подключение домена и хостинга</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">04</div>
+          <span class="step-icon">🎓</span>
+          <h3>Обучение 15 минут</h3>
+          <p>Научим вас управлять сайтом и менять контент</p>
+        </div>
+      </div>
+      <div class="process-cta">
+        <p>Хотите так же быстро?</p>
+        <a href="#form-section" class="btn-primary">Начать проект <i class="bx bx-arrow-right"></i></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК «КЕЙСЫ» ========== -->
+  <section id="cases">
+    <div class="container">
+      <div class="section-label">Наши работы</div>
+      <h2>Реальные результаты <span>для бизнеса</span></h2>
+      <p class="section-desc">Цифры, которые говорят сами за себя. Названия компаний скрыты по запросу клиентов</p>
+      
+      <div class="confidentiality-banner">
+        <i class="bxs bx-lock-alt"></i>
+        <div>
+          <strong>Все кейсы публикуются только с разрешения клиентов</strong>
+          <span>Мы уважаем конфиденциальность вашего бизнеса</span>
+        </div>
+      </div>
+      
+      <div class="cases-grid">
+        <!-- ===== КЕЙС 1 ===== -->
+        <div class="case-card">
+          <div class="case-image">
+            <div class="case-placeholder">
+              <i class="bx bx-briefcase"></i>
+              <span>Ваш проект</span>
+            </div>
+            <div class="case-badge">+0%</div>
+          </div>
+          <div class="case-content">
+            <h3>Здесь будет ваш успешный кейс</h3>
+            <p>Скоро появится результат вашего проекта с конкретными цифрами</p>
+            <div class="case-result">
+              <i class="bxs bx-trending-up"></i>
+              <span>Прибыль: <strong>скоро</strong></span>
+            </div>
+            <div class="case-tags">
+              <span class="tag"><i class="bx bx-plus"></i> Ваша ниша</span>
+              <span class="tag"><i class="bx bx-plus"></i> Ваш результат</span>
+              <span class="tag confidentiality-tag"><i class="bx bx-lock-alt"></i> Данные скрыты</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- ===== КЕЙС 2 ===== -->
+        <div class="case-card">
+          <div class="case-image">
+            <div class="case-placeholder">
+              <i class="bx bx-briefcase"></i>
+              <span>Ваш проект</span>
+            </div>
+            <div class="case-badge">+0%</div>
+          </div>
+          <div class="case-content">
+            <h3>Здесь будет ваш успешный кейс</h3>
+            <p>Скоро появится результат вашего проекта с конкретными цифрами</p>
+            <div class="case-result">
+              <i class="bxs bx-trending-up"></i>
+              <span>Прибыль: <strong>скоро</strong></span>
+            </div>
+            <div class="case-tags">
+              <span class="tag"><i class="bx bx-plus"></i> Ваша ниша</span>
+              <span class="tag"><i class="bx bx-plus"></i> Ваш результат</span>
+              <span class="tag confidentiality-tag"><i class="bx bx-lock-alt"></i> Данные скрыты</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК КОНФИДЕНЦИАЛЬНОСТИ ========== -->
+  <section id="confidentiality">
+    <div class="container">
+      <div class="confidentiality-wrapper">
+        <div class="confidentiality-icon">
+          <i class="bxs bx-shield-alt-2"></i>
+        </div>
+        <div class="confidentiality-content">
+          <div class="section-label">🔒 Конфиденциальность</div>
+          <h2>Ваши данные <span>под надёжной защитой</span></h2>
+          <p>Мы понимаем, как важно сохранить конфиденциальность вашего бизнеса. Поэтому мы гарантируем:</p>
+          <div class="confidentiality-grid">
+            <div class="conf-item">
+              <i class="bxs bx-file"></i>
+              <div>
+                <strong>Подписание NDA</strong>
+                <span>По вашему запросу подписываем соглашение о неразглашении</span>
+              </div>
+            </div>
+            <div class="conf-item">
+              <i class="bxs bx-server"></i>
+              <div>
+                <strong>Безопасное хранение данных</strong>
+                <span>Все данные хранятся на защищённых серверах</span>
+              </div>
+            </div>
+            <div class="conf-item">
+              <i class="bxs bx-user-check"></i>
+              <div>
+                <strong>Доступ только к проекту</strong>
+                <span>Только вы и я имеете доступ к вашему проекту</span>
+              </div>
+            </div>
+            <div class="conf-item">
+              <i class="bxs bx-trash"></i>
+              <div>
+                <strong>Удаление по запросу</strong>
+                <span>Мы удаляем все данные после завершения проекта</span>
+              </div>
+            </div>
+          </div>
+          <div class="nda-cta">
+            <a href="#nda" class="btn-primary">
+              <i class="bx bx-file"></i> Скачать шаблон NDA
+            </a>
+            <span class="nda-note">Подписываем в 2 клика. Бесплатно</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК «О НАС» ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-wrapper">
+        <div class="about-content">
+          <div class="section-label">Обо мне</div>
+          <h2>Александр Полозков <br><span>самозанятый веб-разработчик</span></h2>
+          <p>
+            <strong>Меня зовут Александр Полозков Геннадьевич</strong>. Я самозанятый веб-разработчик из Самары. 
+            Работаю официально — выдаю чеки, плачу налоги и несу ответственность за каждый проект.
+          </p>
+          <p>
+            Я не держу офис с дорогой арендой — поэтому мои цены ниже студий, а качество выше, 
+            потому что проверяю каждый проект лично. Отвечаю в Telegram за 1 минуту.
+          </p>
+          <div class="tag-group">
+            <span class="tag"><i class="bx bx-shield-alt-2"></i> Самозанятость</span>
+            <span class="tag"><i class="bxs bx-lock-alt"></i> Конфиденциальность</span>
+            <span class="tag"><i class="bx bx-money"></i> Гарантия возврата</span>
+          </div>
+          <div class="about-buttons">
+            <a href="#form-section" class="btn-primary">Обсудить проект</a>
+            <a href="#nda" class="btn-outline">Скачать NDA</a>
+          </div>
+        </div>
+        <div class="about-stats">
+          <div class="stat-card">
+            <span class="stat-number">3</span>
+            <span class="stat-label">Успешных проектов</span>
+          </div>
+         <div class="stat-card"> 
+            <span class="stat-number">1 год</span>
+            <span class="stat-label">Опыт разработки</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-number">24/7</span>
+            <span class="stat-label">Поддержка клиентов</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== БЛОК С ФОРМОЙ ========== -->
+  <section id="form-section">
+    <div class="container">
+      <div class="form-wrapper">
+        <div class="form-left">
+          <div class="section-label">Начните зарабатывать</div>
+          <h2>Оставьте заявку <br><span>на разработку сайта</span></h2>
+          <ul class="form-benefits">
+            <li><i class="bxs bx-check-circle"></i> Получите КП за 10 минут</li>
+            <li><i class="bxs bx-check-circle"></i> Бесплатный аудит сайта</li>
+            <li><i class="bxs bx-check-circle"></i> Гарантия +20% заявок</li>
+            <li><i class="bxs bx-check-circle"></i> <strong>Скидка 15%</strong> при заказе сегодня</li>
+            <li><i class="bxs bx-check-circle"></i> 🔒 Полная конфиденциальность</li>
+          </ul>
+          <div class="contact-info">
+            <p><i class="bxl-telegram"></i> @AftorX</p>
+            <p><i class="bx bx-phone"></i> +7 (927) 650-00-29</p>
+          </div>
+        </div>
+        <div class="form-card" id="formCard">
+          <div class="form-discount-badge">
+            <i class="bx bx-gift"></i> Скидка 15% до конца акции
+          </div>
+          <form id="leadForm">
+            <div class="form-group">
+              <label for="userName"><i class="bx bx-user"></i> Ваше имя</label>
+              <input type="text" id="userName" placeholder="Например, Дмитрий" required>
+            </div>
+            <div class="form-group">
+              <label for="userPhone"><i class="bx bx-phone"></i> Телефон</label>
+              <input type="tel" id="userPhone" placeholder="+7 (___)-___-__-__" required>
+            </div>
+            <div class="form-group">
+              <label for="userBudget"><i class="bx bx-ruble"></i> Бюджет</label>
+              <select id="userBudget" required>
+                <option value="">Выберите бюджет</option>
+                <option value="До 30 000 ₽">До 30 000 ₽</option>
+                <option value="30 000 – 60 000 ₽">30 000 – 60 000 ₽</option>
+                <option value="Более 60 000 ₽">Более 60 000 ₽</option>
+              </select>
+            </div>
+            
+            <div class="form-group confidentiality-check">
+              <label>
+                <input type="checkbox" id="confidentialityAgree" checked>
+                <span>Я принимаю <a href="#privacy-policy" class="privacy-link">политику конфиденциальности</a> и даю согласие на обработку персональных данных</span>
+              </label>
+            </div>
+            
+            <button type="submit" class="btn-primary btn-submit">
+              <i class="bxs bx-paper-plane"></i> Забронировать со скидкой
+            </button>
+            <p class="form-note">
+              <i class="bx bx-lock-alt"></i> 
+              Ваши данные в безопасности. Мы не передаём их третьим лицам
+            </p>
+          </form>
+          <div id="successMessage" style="display:none; text-align:center; padding:20px 0;">
+            <div style="font-size:3rem; margin-bottom:12px;">✅</div>
+            <h3 style="color:#0077FF;">Заявка отправлена!</h3>
+            <p style="color:#2d3748;">Свяжемся с вами через 10 минут</p>
+            <p style="color:#6b7a8f; font-size:0.9rem; margin-top:8px;">
+              <i class="bx bx-lock-alt"></i> 
+              Ваши данные надёжно защищены
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== СТРАНИЦА NDA ========== -->
+  <section id="nda">
+    <div class="container">
+      <div class="nda-wrapper">
+        <a href="#" class="back-link" onclick="window.location.hash=''; return false;">
+          <i class="bx bx-arrow-back"></i> На главную
         </a>
+        
+        <div class="nda-header">
+          <div class="nda-icon">🔒</div>
+          <h1>Соглашение о неразглашении (NDA)</h1>
+          <p class="nda-subtitle">Шаблон для скачивания. Подписываем бесплатно по вашему запросу</p>
+        </div>
 
-        <ul class="nav-links">
-            <li><a href="#heros" class="nav-link active">Главная</a></li>
-            <li><a href="#services" class="nav-link">Услуги</a></li>
-            <li><a href="#cases" class="nav-link">Проекты</a></li>
-            <li><a href="#about" class="nav-link">Обо мне</a></li>
-            <li><a href="#reviews" class="nav-link">Отзывы</a></li>
-            <li><a href="#contacts" class="nav-link">Контакты</a></li>
-        </ul>
+        <!-- ===== КАРТОЧКА С ПРЕИМУЩЕСТВАМИ ===== -->
+        <div class="nda-benefits">
+          <div class="nda-benefit">
+            <i class="bxs bx-check-circle"></i>
+            <div>
+              <strong>Бесплатно</strong>
+              <span>Подписываем NDA без дополнительной оплаты</span>
+            </div>
+          </div>
+          <div class="nda-benefit">
+            <i class="bxs bx-check-circle"></i>
+            <div>
+              <strong>За 5 минут</strong>
+              <span>Электронная подпись через простой документ</span>
+            </div>
+          </div>
+          <div class="nda-benefit">
+            <i class="bxs bx-check-circle"></i>
+            <div>
+              <strong>Юридическая сила</strong>
+              <span>Полноценный документ с защитой ваших данных</span>
+            </div>
+          </div>
+        </div>
 
-        <a href="#contacts" class="btn-cons">Получить консультацию ⭢</a>
-    </header>
+        <!-- ===== САМ ДОКУМЕНТ ===== -->
+        <div class="nda-document" id="ndaDocument">
+          <div class="nda-doc-header">
+            <h2>СОГЛАШЕНИЕ О НЕРАЗГЛАШЕНИИ</h2>
+            <div class="nda-doc-meta">
+              <span>г. Самара</span>
+              <span>«___» ___________ 202__ г.</span>
+            </div>
+          </div>
 
-    <!-- HERO -->
-    <section id="heros" class="hero-section">
-        <div class="bg-glow"></div>
-        <canvas id="particles"></canvas>
-
-        <div class="hero-content">
-            <span class="glass-badge">
-                <i class='bx bx-code-alt'></i> Веб-разработка · 2026
-            </span>
-
-            <h1 class="hero-title">
-                Превращаю идеи <br>в <span class="gradient-text">прибыльные сайты</span>
-            </h1>
-
-            <p class="hero-sub">
-                Создаю современные сайты, которые приносят заявки и продажи.<br>
-                Работаю официально, быстро и с гарантией результата.
+          <div class="nda-doc-body">
+            <p class="nda-doc-p">
+              <strong>Клиент:</strong> _________________________________________________________
+            </p>
+            <p class="nda-doc-p">
+              <strong>Исполнитель:</strong> Полозков Александр Геннадьевич, самозанятый
+            </p>
+            <p class="nda-doc-p" style="margin-top: 16px;">
+              <strong>вместе именуемые «Стороны»</strong>, заключили настоящее соглашение о нижеследующем:
             </p>
 
-            <div class="btn-group">
-                <a href="#contacts" class="btn-primary">
-                    Заказать сайт <i class='bx bx-chevron-right'></i>
-                </a>
-                <a href="#cases" class="btn-secondary">
-                    Мои проекты <i class='bx bx-arrow-right'></i>
-                </a>
+            <div class="nda-doc-section">
+              <h3>1. ОПРЕДЕЛЕНИЯ</h3>
+              <p>1.1. «Конфиденциальная информация» — любые сведения, передаваемые Клиентом Исполнителю в рамках выполнения работ по созданию сайта, включая:</p>
+              <ul>
+                <li>бизнес-планы и стратегии развития</li>
+                <li>данные о клиентах и партнёрах</li>
+                <li>уникальные идеи и ноу-хау</li>
+                <li>финансовые показатели и отчётность</li>
+                <li>любые другие данные, обозначенные как конфиденциальные</li>
+              </ul>
             </div>
 
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <i class='bx bx-rocket'></i>
-                    <span class="stat-number">6 мес</span>
-                    <span class="stat-label">стаж работы</span>
-                </div>
-                <div class="stat-item">
-                    <i class='bx bx-group'></i>
-                    <span class="stat-number">1</span>
-                    <span class="stat-label">выполненных проекта</span>
-                </div>
-                <div class="stat-item">
-                    <i class='bx bx-time'></i>
-                    <span class="stat-number">10 мин</span>
-                    <span class="stat-label">среднее время ответа</span>
-                </div>
+            <div class="nda-doc-section">
+              <h3>2. ОБЯЗАТЕЛЬСТВА ИСПОЛНИТЕЛЯ</h3>
+              <p>2.1. Исполнитель обязуется:</p>
+              <ul>
+                <li>Не разглашать конфиденциальную информацию третьим лицам</li>
+                <li>Не использовать информацию в личных целях</li>
+                <li>Обеспечить сохранность полученных данных</li>
+                <li>Удалить все данные после завершения проекта (по запросу Клиента)</li>
+                <li>Не публиковать проект без письменного согласия Клиента</li>
+              </ul>
             </div>
+
+            <div class="nda-doc-section">
+              <h3>3. ИСКЛЮЧЕНИЯ</h3>
+              <p>3.1. Не считается конфиденциальной информация:</p>
+              <ul>
+                <li>которая была общедоступна на момент передачи</li>
+                <li>которую Клиент раскрыл добровольно</li>
+                <li>которую необходимо раскрыть по закону</li>
+              </ul>
+            </div>
+
+            <div class="nda-doc-section">
+              <h3>4. СРОК ДЕЙСТВИЯ</h3>
+              <p>4.1. Настоящее соглашение вступает в силу с момента подписания и действует в течение <strong>3 (трёх) лет</strong> после завершения работ.</p>
+            </div>
+
+            <div class="nda-doc-section">
+              <h3>5. ОТВЕТСТВЕННОСТЬ</h3>
+              <p>5.1. За нарушение условий соглашения Стороны несут ответственность в соответствии с законодательством РФ.</p>
+            </div>
+
+            <div class="nda-doc-section">
+              <h3>6. ПРОЧИЕ УСЛОВИЯ</h3>
+              <p>6.1. Все споры решаются в досудебном порядке.</p>
+              <p>6.2. Изменения действительны только в письменной форме.</p>
+            </div>
+
+            <div class="nda-doc-section">
+              <h3>7. КОНТАКТНЫЕ ДАННЫЕ</h3>
+              <p><strong>Исполнитель:</strong> Полозков Александр Геннадьевич</p>
+              <p><strong>Статус:</strong> Самозанятый</p>
+              <p><strong>Telegram:</strong> @AftorX</p>
+              <p><strong>Телефон:</strong> +7 (927) 650-00-29</p>
+            </div>
+
+            <div class="nda-doc-sign">
+              <div class="nda-sign-block">
+                <p><strong>Клиент:</strong></p>
+                <div class="nda-sign-line">_________________ / _____________ /</div>
+                <p class="nda-sign-label">подпись / ФИО</p>
+              </div>
+              <div class="nda-sign-block">
+                <p><strong>Исполнитель:</strong></p>
+                <div class="nda-sign-line">_________________ / Полозков А.Г. /</div>
+                <p class="nda-sign-label">подпись / ФИО</p>
+              </div>
+            </div>
+
+            <div class="nda-doc-date">
+              <p>Дата: «___» ___________ 202__ г.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="hero-visual">
-            <div class="hero-image-wrapper">
-                <div class="hero-image-placeholder"></div>
-            </div>
+        <!-- ===== КНОПКИ СКАЧИВАНИЯ ===== -->
+        <div class="nda-actions">
+          <button onclick="downloadNDA()" class="btn-primary">
+            <i class="bx bx-download"></i> Скачать NDA (PDF)
+          </button>
+          <button onclick="copyNDA()" class="btn-outline">
+            <i class="bx bx-copy"></i> Копировать текст
+          </button>
+          <a href="#form-section" class="btn-outline">
+            <i class="bx bx-message"></i> Запросить подписание
+          </a>
         </div>
-    </section>
 
-    <!-- БЕГУЩАЯ СТРОКА -->
-    <div class="marquee">
-        <div class="marquee-track">
-            <span>🚀 Современные сайты 2026</span>
-            <span>⚡ Адаптивная вёрстка</span>
-            <span>🔒 Безопасность и SEO</span>
-            <span>💎 Индивидуальный дизайн</span>
-            <span>📱 Мобильная оптимизация</span>
-            <span class="highlight">🔥 Гарантия возврата</span>
-            <span>🚀 Современные сайты 2026</span>
-            <span>⚡ Адаптивная вёрстка</span>
-            <span>🔒 Безопасность и SEO</span>
-            <span>💎 Индивидуальный дизайн</span>
-            <span>📱 Мобильная оптимизация</span>
-            <span class="highlight">🔥 Гарантия возврата</span>
+        <div class="nda-note-bottom">
+          <i class="bx bx-info-circle"></i>
+          <div>
+            <strong>Как подписать NDA?</strong>
+            <span>1. Скачайте документ → 2. Заполните свои данные → 3. Отправьте мне в Telegram (@AftorX) → 4. Я подпишу и верну вам готовый экземпляр</span>
+          </div>
         </div>
+      </div>
     </div>
+  </section>
 
-    <!-- УСЛУГИ (ПАКЕТЫ) -->
-    <section id="services" class="services-section">
-        <div class="services-header">
-            <span class="section-badge">
-                <i class='bx bx-grid-alt'></i> ПАКЕТЫ
-            </span>
-            <h2 class="section-title">Выбери свой <br>идеальный вариант</h2>
-            <p class="section-subtitle">Все пакеты включают адаптив, чистый код и 3 месяца поддержки.</p>
+  <!-- ========== СТРАНИЦА ПОЛИТИКИ КОНФИДЕНЦИАЛЬНОСТИ ========== -->
+  <section id="privacy-policy">
+    <div class="container">
+      <div class="privacy-policy-wrapper">
+        <a href="#" class="back-link" onclick="window.location.hash=''; return false;">
+          <i class="bx bx-arrow-back"></i> На главную
+        </a>
+        <h1>Политика конфиденциальности</h1>
+        <div class="privacy-content">
+          <div class="privacy-block">
+            <h2>1. Общие положения</h2>
+            <p>Настоящая Политика конфиденциальности действует в отношении всей информации, которую самозанятый веб-разработчик <strong>Полозков Александр Геннадьевич</strong> (далее — «Исполнитель») может получить от пользователей сайта apvizit.ru (далее — «Сайт»).</p>
+          </div>
+
+          <div class="privacy-block">
+            <h2>2. Какие данные мы собираем</h2>
+            <ul>
+              <li><strong>Имя</strong> — для персонализации общения</li>
+              <li><strong>Номер телефона</strong> — для связи с вами</li>
+              <li><strong>Информация о бюджете</strong> — для подготовки коммерческого предложения</li>
+              <li><strong>IP-адрес и данные браузера</strong> — для статистики и улучшения работы сайта</li>
+            </ul>
+          </div>
+
+          <div class="privacy-block">
+            <h2>3. Как мы используем ваши данные</h2>
+            <ul>
+              <li>Для связи с вами и консультации</li>
+              <li>Для подготовки индивидуального коммерческого предложения</li>
+              <li>Для улучшения качества наших услуг</li>
+              <li>Для соблюдения законодательства РФ</li>
+            </ul>
+          </div>
+
+          <div class="privacy-block">
+            <h2>4. Защита данных</h2>
+            <p>Мы принимаем все необходимые меры для защиты ваших персональных данных от несанкционированного доступа, изменения, раскрытия или уничтожения. Ваши данные хранятся на защищённых серверах и доступны только для авторизованных лиц.</p>
+          </div>
+
+          <div class="privacy-block">
+            <h2>5. Передача данных третьим лицам</h2>
+            <p>Мы не передаём ваши персональные данные третьим лицам, за исключением случаев, предусмотренных законодательством РФ. Ваши данные используются только для выполнения обязательств по разработке сайта и сопутствующих услуг.</p>
+          </div>
+
+          <div class="privacy-block">
+            <h2>6. Ваши права</h2>
+            <ul>
+              <li>Право на доступ к вашим данным</li>
+              <li>Право на их уточнение или удаление</li>
+              <li>Право отозвать согласие на обработку данных</li>
+              <li>Право на получение копии ваших данных</li>
+            </ul>
+          </div>
+
+          <div class="privacy-block">
+            <h2>7. Контактная информация</h2>
+            <p><strong>Исполнитель:</strong> Полозков Александр Геннадьевич</p>
+            <p><strong>Статус:</strong> Самозанятый</p>
+            <p><strong>Telegram:</strong> @AftorX</p>
+            <p><strong>Телефон:</strong> +7 (927) 650-00-29</p>
+            <p><strong>Email:</strong> hanrilife@gmail.com</p>
+          </div>
+
+          <div class="privacy-block">
+            <h2>8. Изменения в политике</h2>
+            <p>Мы оставляем за собой право вносить изменения в данную Политику конфиденциальности. Все изменения публикуются на этой странице. Рекомендуем периодически проверять актуальность документа.</p>
+            <p><strong>Дата последнего обновления:</strong> 08 сентября 2026 года</p>
+          </div>
         </div>
+      </div>
+    </div>
+  </section>
 
-        <div class="services-grid">
-            <div class="service-card">
-                <div class="card-icon">
-                    <i class='bx bx-code'></i>
-                </div>
-                <h3>Старт</h3>
-                <p>Сайт-визитка для быстрого старта бизнеса. <strong>Запуск за 3 дня.</strong></p>
-                <ul class="service-features">
-                    <li><i class='bx bx-check-circle'></i> 1 страница</li>
-                    <li><i class='bx bx-check-circle'></i> Форма связи</li>
-                    <li><i class='bx bx-check-circle'></i> Базовое SEO</li>
-                </ul>
-                <div class="price-wrapper">
-                    <span class="prise">10 000 ₽</span>
-                </div>
-                <a href="#contacts" class="service-link order-btn" data-service="Старт">Заказать →</a>
-            </div>
-
-            <div class="service-card popular">
-                <div class="card-badge">🔥 Хит</div>
-                <div class="card-icon">
-                    <i class='bx bx-laptop'></i>
-                </div>
-                <h3>Бизнес</h3>
-                <p>Корпоративный сайт с админ-панелью. <strong>Рост продаж с первого месяца.</strong></p>
-                <ul class="service-features">
-                    <li><i class='bx bx-check-circle'></i> До 5 страниц</li>
-                    <li><i class='bx bx-check-circle'></i> Админ-панель</li>
-                    <li><i class='bx bx-check-circle'></i> Каталог услуг</li>
-                    <li><i class='bx bx-check-circle'></i> 3 месяца поддержки</li>
-                </ul>
-                <div class="price-wrapper">
-                    <span class="prise">25 000 ₽</span>
-                </div>
-                <a href="#contacts" class="service-link order-btn" data-service="Бизнес">Заказать →</a>
-            </div>
-
-            <div class="service-card">
-                <div class="card-icon">
-                    <i class='bx bx-store'></i>
-                </div>
-                <h3>VIP</h3>
-                <p>Интернет-магазин с полным функционалом. <strong>Масштабируйте бизнес.</strong></p>
-                <ul class="service-features">
-                    <li><i class='bx bx-check-circle'></i> Каталог с фильтрами</li>
-                    <li><i class='bx bx-check-circle'></i> Корзина и оплата</li>
-                    <li><i class='bx bx-check-circle'></i> Личный кабинет</li>
-                    <li><i class='bx bx-check-circle'></i> 6 месяцев поддержки</li>
-                </ul>
-                <div class="price-wrapper">
-                    <span class="prise">45 000 ₽</span>
-                </div>
-                <a href="#contacts" class="service-link order-btn" data-service="VIP">Заказать →</a>
-            </div>
+  <!-- ========== ПОДВАЛ ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="logo">
+            <span class="logo-icon">⚡</span>
+            <span class="logo-text">APVIZIT<span>.RU</span></span>
+          </div>
+          <p>Создаём сайты, которые приносят деньги в Самаре</p>
+          <p style="font-size:0.85rem; color:#6b7a8f; margin-top:4px;">
+            <strong>Полозков Александр Геннадьевич</strong><br>
+            Самозанятый веб-разработчик
+          </p>
+          <div class="social-links">
+            <a href="#"><i class="bxl-telegram"></i></a>
+            <a href="#"><i class="bxl-vk"></i></a>
+            <a href="#"><i class="bxl-whatsapp"></i></a>
+          </div>
         </div>
-    </section>
-
-    <!-- КЕЙСЫ (РЕАЛЬНЫЕ ПРОЕКТЫ) -->
-    <section id="cases" class="cases-section">
-        <div class="cases-header">
-            <span class="section-badge">
-                <i class='bx bx-folder-open'></i> РЕАЛЬНЫЕ ПРОЕКТЫ
-            </span>
-            <h2 class="section-title">Мои работы</h2>
-            <p class="section-subtitle">Каждый проект — это шаг вперёд. Сейчас я активно пополняю портфолио.</p>
+        <div class="footer-col">
+          <h4>Услуги</h4>
+          <a href="#">Разработка сайтов</a>
+          <a href="#">Интернет-магазины</a>
+          <a href="#">Лендинги</a>
+          <a href="#">SEO-оптимизация</a>
         </div>
-
-        <div class="cases-grid">
-            <!-- КАРТОЧКА 1: SYMMETRY -->
-            <div class="case-card">
-                <div class="case-image">
-                    <img src="1.jpg" alt="Сайт парикмахерской SYMMETRY" style="width:100%; height:100%; object-fit:cover; display:block;">
-                </div>
-                <div class="case-content">
-                    <span class="case-status" style="background: rgba(196, 138, 123, 0.15); color: #C48A7B;">✂️ Сайт парикмахерской</span>
-                    <h3>SYMMETRY — студия красоты</h3>
-                    <p>Разработал современный лендинг с каталогом услуг, карточками мастеров, отзывами и интеграцией с Яндекс Картами для записи.</p>
-                    <div class="offer-benefits">
-                        <span>✨ Адаптивный дизайн</span>
-                        <span>📱 Мобильная вёрстка</span>
-                        <span>🔗 Интеграция с картами</span>
-                    </div>
-                    <!-- Добавленный блок с результатом -->
-                    <div class="case-result" style="margin: 12px 0 16px; background: rgba(46,213,115,0.08); border-radius: 12px; padding: 10px 16px; border-left: 3px solid #2ed573;">
-                        <span style="font-size:0.85rem; color: #b0b8d9;">📈 <strong style="color: #2ed573;">Результат:</strong> сайт помогает привлекать клиентов и увеличивать запись на услуги</span>
-                    </div>
-                    <a href="https://hanrilife-lgtm.github.io/1/" target="_blank" class="case-link primary">
-                        Посмотреть сайт <i class='bx bx-arrow-right'></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- КАРТОЧКА 2: ПРИГЛАШЕНИЕ -->
-            <div class="case-card invite-card">
-                <div class="case-image placeholder">
-                    <i class='bx bx-rocket'></i>
-                </div>
-                <div class="case-content">
-                    <span class="case-status">💼 Хотите быть первым?</span>
-                    <h3>Ваш проект может стать моим главным кейсом</h3>
-                    <p>Я ищу интересные задачи для портфолио. Оставьте заявку — и мы создадим крутой сайт вместе!</p>
-                    <div class="offer-benefits">
-                        <span>✨ Индивидуальный подход</span>
-                        <span>⚡ Быстрый старт</span>
-                        <span>🎯 Результат</span>
-                    </div>
-                    <a href="#contacts" class="case-link primary">Обсудить проект →</a>
-                </div>
-            </div>
+        <div class="footer-col">
+          <h4>Контакты</h4>
+          <a href="https://t.me/@AftorX"><i class="bxl-telegram"></i> @AftorX</a>
+          <a href="tel:+79276500029"><i class="bx bx-phone"></i> +7 (927) 650-00-29</a>
+          <a href="mailto:hanrilife@gmail.com"><i class="bx bx-envelope"></i> hanrilife@gmail.com</a>
         </div>
-    </section>
-
-    <!-- ОБО МНЕ -->
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <div class="about-content">
-                <span class="section-badge">
-                    <i class='bx bx-user'></i> ОБО МНЕ
-                </span>
-                <h2 class="section-title">Привет! Я Александр</h2>
-                <p class="about-text">
-                    Веб-разработчик, который любит <span class="highlight">порядок в коде</span> и 
-                    <span class="highlight">чистоту в дизайне</span>. 
-                    Моя цель — создавать сайты, которые <span class="highlight">приносят пользу</span> бизнесу.
-                </p>
-                <p class="about-text">
-                    Работаю на фрилансе, потому что ценю гибкость, прямой контакт с заказчиком 
-                    и свободу выбирать задачи под свой стиль.
-                </p>
-                <p class="about-text">
-                    Мне важно, чтобы сайт не просто красиво выглядел, а был 
-                    <span class="highlight">удобным, быстрым и понятным</span> любому пользователю.
-                </p>
-                <div class="about-principle">
-                    <span>🧠</span>
-                    <p>«Сделано — значит работает без вопросов»</p>
-                </div>
-                <div class="about-skills">
-                    <span>HTML5</span>
-                    <span>CSS3</span>
-                    <span>JavaScript</span>
-                    <span>Адаптивная вёрстка</span>
-                    <span>SEO</span>
-                </div>
-            </div>
+        <div class="footer-col">
+          <h4>Информация</h4>
+          <a href="#about">О нас</a>
+          <a href="#cases">Кейсы</a>
+          <a href="#privacy-policy">Политика конфиденциальности</a>
+          <a href="#nda"><i class="bx bx-file"></i> Скачать NDA</a>
         </div>
-    </section>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 APVIZIT.RU — Разработка сайтов в Самаре</p>
+        <p style="font-size:0.9rem; color:#6b7a8f;">
+          <i class="bx bx-lock-alt"></i> 
+          Полозков Александр Геннадьевич — самозанятый. Чек по запросу.
+        </p>
+      </div>
+    </div>
+  </footer>
 
-    <!-- ОТЗЫВЫ -->
-    <section id="reviews" class="reviews-section">
-        <div class="reviews-header">
-            <span class="section-badge">
-                <i class='bx bx-message-dots'></i> ОТЗЫВЫ
-            </span>
-            <h2 class="section-title">Что говорят клиенты</h2>
-            <p class="section-subtitle">Каждый отзыв — это шаг к доверию. Я только начинаю, но уже собираю обратную связь.</p>
-        </div>
-
-        <div class="reviews-grid">
-            <div class="review-card invite-review">
-                <div class="review-stars">
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star'></i>
-                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.2);"></i>
-                </div>
-                <p class="review-text">
-                    "Пока здесь нет отзывов, но я уверен — вы будете первым, кто его оставит! 
-                    Работаем честно, качественно и с душой."
-                </p>
-                <div class="review-author">
-                    <div class="review-avatar" style="background: linear-gradient(135deg, #7c3aed, #4a5aff);">
-                        <i class='bx bx-user'></i>
-                    </div>
-                    <div>
-                        <h4>Вы можете быть первым!</h4>
-                        <span>Оставьте отзыв после работы</span>
-                    </div>
-                </div>
-                <div class="review-offer">
-                    <span>✨ Работаю на результат</span>
-                    <span>🤝 Честность и открытость</span>
-                    <span>📱 Всегда на связи</span>
-                </div>
-                <a href="#contacts" class="review-btn">
-                    <i class='bx bx-chat'></i> Связаться со мной
-                </a>
-            </div>
-            <div class="review-card invite-review secondary">
-                <div class="review-stars">
-                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                    <i class='bx bxs-star' style="color: rgba(124, 58, 237, 0.15);"></i>
-                </div>
-                <p class="review-text">
-                    "Здесь могут быть ваши слова о моей работе. 
-                    Я стараюсь, чтобы каждый клиент остался доволен!"
-                </p>
-                <div class="review-author">
-                    <div class="review-avatar" style="background: rgba(124, 58, 237, 0.15);">
-                        <i class='bx bx-smile'></i>
-                    </div>
-                    <div>
-                        <h4>Ваш отзыв</h4>
-                        <span>Будет здесь после проекта</span>
-                    </div>
-                </div>
-                <div class="review-offer">
-                    <span>💎 Качество превыше всего</span>
-                    <span>⚡ Быстро и в срок</span>
-                </div>
-                <a href="#cases" class="review-btn secondary">
-                    <i class='bx bx-folder-open'></i> Посмотреть работы
-                </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- ГАРАНТИЯ -->
-    <section class="guarantee-section">
-        <div style="text-align:center; margin-bottom: 40px;">
-            <span class="section-badge"><i class='bx bx-shield'></i> ГАРАНТИЯ</span>
-            <h2 class="section-title">Почему мне доверяют</h2>
-        </div>
-        <div class="guarantee-grid">
-            <div class="guarantee-item">
-                <i class='bx bx-check-circle'></i>
-                <h4>Возврат средств</h4>
-                <p>Если результат не устроит — верну деньги</p>
-            </div>
-            <div class="guarantee-item">
-                <i class='bx bx-time'></i>
-                <h4>Сроки</h4>
-                <p>Всегда укладываюсь в договорённости</p>
-            </div>
-            <div class="guarantee-item">
-                <i class='bx bx-support'></i>
-                <h4>Поддержка</h4>
-                <p>Бесплатная помощь 3 месяца после запуска</p>
-            </div>
-            <div class="guarantee-item">
-                <i class='bx bx-lock'></i>
-                <h4>Безопасность</h4>
-                <p>Защита от взлома и регулярные обновления</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- КОНТАКТЫ -->
-    <section id="contacts" class="contacts-section">
-        <div class="contacts-container">
-            <div class="contacts-header">
-                <span class="section-badge">
-                    <i class='bx bx-phone'></i> КОНТАКТЫ
-                </span>
-                <h2 class="section-title">Готовы обсудить ваш проект?</h2>
-                <p class="section-subtitle">Оставьте заявку — я свяжусь с вами в ближайшее время.</p>
-            </div>
-
-            <div class="contacts-glass">
-                <div class="contacts-grid">
-                    <div class="contacts-info">
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class='bx bx-phone'></i></div>
-                            <div>
-                                <span class="contact-label">Телефон</span>
-                                <span class="contact-value">+7 (927) 650-00-29</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class='bx bx-envelope'></i></div>
-                            <div>
-                                <span class="contact-label">E-mail</span>
-                                <span class="contact-value">Goodliveman1@yandex.ru</span>
-                            </div>
-                        </div>
-                        <div class="contact-item">
-                            <div class="contact-icon"><i class='bx bx-map'></i></div>
-                            <div>
-                                <span class="contact-label">Адрес</span>
-                                <span class="contact-value">г. Самара</span>
-                            </div>
-                        </div>
-
-                        <div class="contacts-vk">
-                            <a href="https://vk.com/idsanapolozkov" target="_blank" class="vk-btn">
-                                <i class='bx bxl-vk'></i> Написать в ВКонтакте
-                            </a>
-                            <span class="vk-hint">Быстрый ответ в течение 10 минут</span>
-                        </div>
-                        <div class="contacts-note">
-                            <p>📌 Отвечаю в течение 10 минут</p>
-                        </div>
-                    </div>
-
-                    <div class="contacts-form">
-                        <form id="contactForm">
-                            <div class="form-row">
-                                <div class="form-group half">
-                                    <input type="text" placeholder="Имя" required>
-                                </div>
-                                <div class="form-group half">
-                                    <input type="tel" placeholder="Телефон" required>
-                                </div>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" placeholder="Как с вами связаться? (Telegram, VK, email...)" required>
-                            </div>
-                            <div class="form-group">
-                                <textarea rows="3" placeholder="Сообщение" id="formMessage"></textarea>
-                            </div>
-
-                            <div class="form-notice">
-                                <i class='bx bx-info-circle'></i>
-                                <span>Если форма не отправляется, включите <strong>VPN</strong> или напишите в <strong>ВКонтакте</strong> (кнопка слева)</span>
-                            </div>
-
-                            <div class="form-group checkbox-group">
-                                <label class="checkbox-label">
-                                    <input type="checkbox" required>
-                                    <span class="checkmark"></span>
-                                    <span class="checkbox-text">
-                                        Я принимаю условия <a href="oferta.html" class="policy-link">пользовательского соглашения (оферты)</a>, 
-                                        согласен с <a href="policy.html" class="policy-link">политикой конфиденциальности</a> 
-                                        и даю согласие на обработку персональных данных в соответствии с 
-                                        Федеральным законом № 152-ФЗ
-                                    </span>
-                                </label>
-                            </div>
-
-                            <button type="submit" class="submit-btn">
-                                Отправить заявку <i class='bx bx-chevron-right'></i>
-                            </button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ФУТЕР -->
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-grid">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="logoappp.png" alt="APVIZIT Logo" class="footer-logo-img">
-                        <span class="footer-logo-text">APVIZIT</span>
-                    </div>
-                    <p class="footer-description">
-                        Создаю современные сайты под ключ.<br>
-                        Работаю официально, быстро и с гарантией.
-                    </p>
-                    <div class="footer-social">
-                        <a href="#" class="footer-social-link"><i class='bx bxl-telegram'></i></a>
-                        <a href="#" class="footer-social-link"><i class='bx bxl-vk'></i></a>
-                        <a href="#" class="footer-social-link"><i class='bx bxl-github'></i></a>
-                    </div>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Навигация</h4>
-                    <ul class="footer-links">
-                        <li><a href="#heros">Главная</a></li>
-                        <li><a href="#services">Услуги</a></li>
-                        <li><a href="#cases">Проекты</a></li>
-                        <li><a href="#about">Обо мне</a></li>
-                        <li><a href="#reviews">Отзывы</a></li>
-                        <li><a href="#contacts">Контакты</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Услуги</h4>
-                    <ul class="footer-links">
-                        <li><a href="#services">Сайт-визитка</a></li>
-                        <li><a href="#services">Корпоративный сайт</a></li>
-                        <li><a href="#services">Интернет-магазин</a></li>
-                        <li><a href="#services">Адаптивная вёрстка</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4 class="footer-title">Контакты</h4>
-                    <ul class="footer-contacts">
-                        <li>
-                            <i class='bx bx-phone'></i>
-                            <a href="tel:+79276500029">+7 (927) 650-00-29</a>
-                        </li>
-                        <li>
-                            <i class='bx bx-envelope'></i>
-                            <a href="mailto:Goodliveman1@yandex.ru">Goodliveman1@yandex.ru</a>
-                        </li>
-                        <li>
-                            <i class='bx bx-map'></i>
-                            <span>г. Самара</span>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p class="footer-copy">© 2026 APVIZIT. Все права защищены.</p>
-                <div class="footer-bottom-links">
-                    <a href="policy.html">Политика конфиденциальности</a>
-                    <a href="oferta.html">Пользовательское соглашение</a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="config.js"></script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

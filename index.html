@@ -87,7 +87,7 @@
             <span class="stat-label">рост заявок</span>
           </div>
           <div class="stat-item">
-            <span class="stat-number">3</span>
+            <span class="stat-number">10+</span>
             <span class="stat-label">проектов в 2026</span>
           </div>
         </div>
@@ -451,75 +451,83 @@
   </section>
 
   <!-- ========== БЛОК С ФОРМОЙ ========== -->
-  <section id="form-section">
-    <div class="container">
-      <div class="form-wrapper">
-        <div class="form-left">
-          <div class="section-label">Начните зарабатывать</div>
-          <h2>Оставьте заявку <br><span>на разработку сайта</span></h2>
-          <ul class="form-benefits">
-            <li><i class="bxs bx-check-circle"></i> Получите КП за 10 минут</li>
-            <li><i class="bxs bx-check-circle"></i> Бесплатный аудит сайта</li>
-            <li><i class="bxs bx-check-circle"></i> Гарантия +20% заявок</li>
-            <li><i class="bxs bx-check-circle"></i> <strong>Скидка 15%</strong> при заказе сегодня</li>
-            <li><i class="bxs bx-check-circle"></i> 🔒 Полная конфиденциальность</li>
-          </ul>
-          <div class="contact-info">
-            <p><i class="bxl-telegram"></i> @AftorX</p>
-            <p><i class="bx bx-phone"></i> +7 (927) 650-00-29</p>
-          </div>
+<section id="form-section">
+  <div class="container">
+    <div class="form-wrapper">
+      <div class="form-left">
+        <div class="section-label">Начните зарабатывать</div>
+        <h2>Оставьте заявку <br><span>на разработку сайта</span></h2>
+        <ul class="form-benefits">
+          <li><i class="bxs bx-check-circle"></i> Получите КП за 10 минут</li>
+          <li><i class="bxs bx-check-circle"></i> Бесплатный аудит сайта</li>
+          <li><i class="bxs bx-check-circle"></i> Гарантия +20% заявок</li>
+          <li><i class="bxs bx-check-circle"></i> <strong>Скидка 15%</strong> при заказе сегодня</li>
+          <li><i class="bxs bx-check-circle"></i> 🔒 Полная конфиденциальность</li>
+        </ul>
+        <div class="contact-info">
+          <p><i class="bxl-telegram"></i> @AftorX</p>
+          <p><i class="bx bx-phone"></i> +7 (927) 650-00-29</p>
         </div>
-        <div class="form-card" id="formCard">
-          <div class="form-discount-badge">
-            <i class="bx bx-gift"></i> Скидка 15% до конца акции
+      </div>
+      <div class="form-card" id="formCard">
+        <div class="form-discount-badge">
+          <i class="bx bx-gift"></i> Скидка 15% до конца акции
+        </div>
+        
+        <!-- ===== НОВАЯ ФОРМА С FORMPREE ===== -->
+        <form id="leadForm" action="https://formspree.io/f/xwlkrgoa" method="POST">
+          <!-- Скрытые поля для улучшения письма -->
+          <input type="hidden" name="_subject" value="Новая заявка с APVIZIT.RU">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_format" value="plain">
+          
+          <div class="form-group">
+            <label for="userName"><i class="bx bx-user"></i> Ваше имя</label>
+            <input type="text" id="userName" name="name" placeholder="Например, Дмитрий" required>
           </div>
-          <form id="leadForm">
-            <div class="form-group">
-              <label for="userName"><i class="bx bx-user"></i> Ваше имя</label>
-              <input type="text" id="userName" placeholder="Например, Дмитрий" required>
-            </div>
-            <div class="form-group">
-              <label for="userPhone"><i class="bx bx-phone"></i> Телефон</label>
-              <input type="tel" id="userPhone" placeholder="+7 (___)-___-__-__" required>
-            </div>
-            <div class="form-group">
-              <label for="userBudget"><i class="bx bx-ruble"></i> Бюджет</label>
-              <select id="userBudget" required>
-                <option value="">Выберите бюджет</option>
-                <option value="До 30 000 ₽">До 30 000 ₽</option>
-                <option value="30 000 – 60 000 ₽">30 000 – 60 000 ₽</option>
-                <option value="Более 60 000 ₽">Более 60 000 ₽</option>
-              </select>
-            </div>
-            
-            <div class="form-group confidentiality-check">
-              <label>
-                <input type="checkbox" id="confidentialityAgree" checked>
-                <span>Я принимаю <a href="#privacy-policy" class="privacy-link">политику конфиденциальности</a> и даю согласие на обработку персональных данных</span>
-              </label>
-            </div>
-            
-            <button type="submit" class="btn-primary btn-submit">
-              <i class="bxs bx-paper-plane"></i> Забронировать со скидкой
-            </button>
-            <p class="form-note">
-              <i class="bx bx-lock-alt"></i> 
-              Ваши данные в безопасности. Мы не передаём их третьим лицам
-            </p>
-          </form>
-          <div id="successMessage" style="display:none; text-align:center; padding:20px 0;">
-            <div style="font-size:3rem; margin-bottom:12px;">✅</div>
-            <h3 style="color:#0077FF;">Заявка отправлена!</h3>
-            <p style="color:#2d3748;">Свяжемся с вами через 10 минут</p>
-            <p style="color:#6b7a8f; font-size:0.9rem; margin-top:8px;">
-              <i class="bx bx-lock-alt"></i> 
-              Ваши данные надёжно защищены
-            </p>
+          <div class="form-group">
+            <label for="userPhone"><i class="bx bx-phone"></i> Телефон</label>
+            <input type="tel" id="userPhone" name="phone" placeholder="+7 (___)-___-__-__" required>
           </div>
+          <div class="form-group">
+            <label for="userBudget"><i class="bx bx-ruble"></i> Бюджет</label>
+            <select id="userBudget" name="budget" required>
+              <option value="">Выберите бюджет</option>
+              <option value="До 30 000 ₽">До 30 000 ₽</option>
+              <option value="30 000 – 60 000 ₽">30 000 – 60 000 ₽</option>
+              <option value="Более 60 000 ₽">Более 60 000 ₽</option>
+            </select>
+          </div>
+          
+          <div class="form-group confidentiality-check">
+            <label>
+              <input type="checkbox" id="confidentialityAgree" name="confidentiality" checked>
+              <span>Я принимаю <a href="#privacy-policy" class="privacy-link">политику конфиденциальности</a> и даю согласие на обработку персональных данных</span>
+            </label>
+          </div>
+          
+          <button type="submit" class="btn-primary btn-submit">
+            <i class="bxs bx-paper-plane"></i> Отправить заявку
+          </button>
+          <p class="form-note">
+            <i class="bx bx-lock-alt"></i> 
+            Ваши данные в безопасности. Мы не передаём их третьим лицам
+          </p>
+        </form>
+        
+        <div id="successMessage" style="display:none; text-align:center; padding:20px 0;">
+          <div style="font-size:3rem; margin-bottom:12px;">✅</div>
+          <h3 style="color:#0077FF;">Заявка отправлена!</h3>
+          <p style="color:#2d3748;">Свяжемся с вами через 10 минут</p>
+          <p style="color:#6b7a8f; font-size:0.9rem; margin-top:8px;">
+            <i class="bx bx-lock-alt"></i> 
+            Ваши данные надёжно защищены
+          </p>
         </div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
   <!-- ========== СТРАНИЦА NDA ========== -->
   <section id="nda">
